@@ -1,0 +1,58 @@
+{
+  "users": [
+    {
+      "username": "mod_user",
+      "password": "mod123",
+      "role": "moderator",
+      "displayName": "Moderator User",
+      "email": "mod@ukbrum.com",
+      "lastLogin": "2023-06-15T10:30:00Z",
+      "status": "active"
+    },
+    {
+      "username": "admin_user",
+      "password": "admin123",
+      "role": "admin",
+      "displayName": "Admin User",
+      "email": "admin@ukbrum.com",
+      "lastLogin": "2023-06-15T09:45:00Z",
+      "status": "active"
+    },
+    {
+      "username": "manager_user",
+      "password": "manager123",
+      "role": "management",
+      "displayName": "Manager User",
+      "email": "manager@ukbrum.com",
+      "lastLogin": "2023-06-14T16:20:00Z",
+      "status": "active"
+    },
+    {
+      "username": "founder_user",
+      "password": "founder123",
+      "role": "founder",
+      "displayName": "Founder User",
+      "email": "founder@ukbrum.com",
+      "lastLogin": "2023-06-14T14:10:00Z",
+      "status": "active"
+    },
+    {
+      "username": "mod_john",
+      "password": "john123",
+      "role": "moderator",
+      "displayName": "John Smith",
+      "email": "john@ukbrum.com",
+      "lastLogin": "2023-06-13T11:25:00Z",
+      "status": "active"
+    },
+    {
+      "username": "mod_sarah",
+      "password": "sarah123",
+      "role": "moderator",
+      "displayName": "Sarah Johnson",
+      "email": "sarah@ukbrum.com",
+      "lastLogin": "2023-06-12T15:40:00Z",
+      "status": "inactive"
+    }
+  ]
+}

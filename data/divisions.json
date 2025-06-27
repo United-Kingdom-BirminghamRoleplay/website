@@ -1,0 +1,199 @@
+{
+  "departments": [
+    {
+      "id": "police",
+      "name": "West Midlands Police",
+      "divisions": [
+        {
+          "id": "firearms",
+          "name": "Firearms Unit",
+          "icon": "fa-shield-alt",
+          "description": "Specially trained officers who respond to incidents involving firearms or threats requiring armed support.",
+          "features": [
+            "Armed response vehicles",
+            "Counter-terrorism operations",
+            "High-risk warrant execution"
+          ]
+        },
+        {
+          "id": "traffic",
+          "name": "Traffic Unit",
+          "icon": "fa-car",
+          "description": "Specialized officers who enforce traffic laws and investigate serious road traffic collisions.",
+          "features": [
+            "High-speed pursuit capability",
+            "Advanced driver training",
+            "Collision investigation"
+          ]
+        },
+        {
+          "id": "dog",
+          "name": "Dog Section",
+          "icon": "fa-paw",
+          "description": "Officers who work with specially trained police dogs to track suspects, find missing persons, and detect contraband.",
+          "features": [
+            "Tracking and apprehension",
+            "Drug and explosive detection",
+            "Public order support"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mod",
+      "name": "Ministry of Defence Police",
+      "divisions": [
+        {
+          "id": "special-escort",
+          "name": "Special Escort Group",
+          "icon": "fa-motorcycle",
+          "description": "Elite officers who provide armed escorts for high-value defense assets and VIPs.",
+          "features": [
+            "Advanced driving techniques",
+            "Close protection training",
+            "Counter-ambush tactics"
+          ]
+        },
+        {
+          "id": "marine",
+          "name": "Marine Unit",
+          "icon": "fa-ship",
+          "description": "Specialized officers who provide security for naval bases and waterways.",
+          "features": [
+            "Maritime patrol vessels",
+            "Underwater search capability",
+            "Port security operations"
+          ]
+        },
+        {
+          "id": "tactical-support",
+          "name": "Tactical Support Group",
+          "icon": "fa-user-shield",
+          "description": "Highly trained officers who provide tactical support for high-risk operations.",
+          "features": [
+            "Advanced weapons training",
+            "Tactical entry techniques",
+            "Specialized equipment"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fire",
+      "name": "West Midlands Fire Service",
+      "divisions": [
+        {
+          "id": "technical-rescue",
+          "name": "Technical Rescue",
+          "icon": "fa-hard-hat",
+          "description": "Specialized firefighters trained in complex rescue operations including building collapse and confined spaces.",
+          "features": [
+            "Urban search and rescue",
+            "Rope rescue operations",
+            "Structural collapse response"
+          ]
+        },
+        {
+          "id": "hazmat",
+          "name": "Hazardous Materials",
+          "icon": "fa-biohazard",
+          "description": "Specially trained firefighters who respond to incidents involving hazardous materials and substances.",
+          "features": [
+            "Chemical identification",
+            "Decontamination procedures",
+            "Specialized protective equipment"
+          ]
+        },
+        {
+          "id": "water-rescue",
+          "name": "Water Rescue",
+          "icon": "fa-water",
+          "description": "Firefighters trained in water rescue operations for floods and water-related emergencies.",
+          "features": [
+            "Swift water rescue",
+            "Flood response",
+            "Boat operations"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ambulance",
+      "name": "West Midlands Ambulance Service",
+      "divisions": [
+        {
+          "id": "hart",
+          "name": "HART Team",
+          "icon": "fa-first-aid",
+          "description": "Hazardous Area Response Team - paramedics trained to provide medical care in dangerous environments.",
+          "features": [
+            "Chemical incident response",
+            "Working at heights",
+            "Confined space operations"
+          ]
+        },
+        {
+          "id": "air-ambulance",
+          "name": "Air Ambulance",
+          "icon": "fa-helicopter",
+          "description": "Specialized team that provides rapid response and transport via helicopter for critical patients.",
+          "features": [
+            "Rapid deployment",
+            "Advanced medical equipment",
+            "Critical care capability"
+          ]
+        },
+        {
+          "id": "critical-care",
+          "name": "Critical Care",
+          "icon": "fa-heartbeat",
+          "description": "Advanced paramedics with additional training to provide enhanced medical interventions.",
+          "features": [
+            "Advanced clinical procedures",
+            "Specialized medications",
+            "Trauma management"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "highways",
+      "name": "National Highways",
+      "divisions": [
+        {
+          "id": "incident-support",
+          "name": "Incident Support",
+          "icon": "fa-traffic-light",
+          "description": "Specialized officers who provide enhanced support during major road incidents.",
+          "features": [
+            "Advanced traffic management",
+            "Scene preservation",
+            "Multi-agency coordination"
+          ]
+        },
+        {
+          "id": "vehicle-recovery",
+          "name": "Vehicle Recovery",
+          "icon": "fa-truck-pickup",
+          "description": "Specialized team equipped to recover and remove disabled or damaged vehicles from highways.",
+          "features": [
+            "Heavy vehicle recovery",
+            "Rapid clearance techniques",
+            "Specialized equipment"
+          ]
+        },
+        {
+          "id": "winter-operations",
+          "name": "Winter Operations",
+          "icon": "fa-snowflake",
+          "description": "Team responsible for keeping roads clear and safe during adverse winter weather.",
+          "features": [
+            "Snow plowing",
+            "Salt spreading",
+            "Weather monitoring"
+          ]
+        }
+      ]
+    }
+  ]
+}
