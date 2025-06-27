@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard - UKBRUM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="../js/local-storage-api.js" defer></script>
+    <script src="dashboard-updated.js" defer></script>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="../images/logo.png" alt="UKBRUM Logo" class="logo">
+                <h1>UKBRUM</h1>
+            </div>
+            
+            <div class="user-info">
+                <div class="avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="user-details">
+                    <h3 id="userName">Username</h3>
+                    <span id="userRole" class="role-badge">Role</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="#dashboard" data-section="dashboard">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#reports" data-section="reports">
+                            <i class="fas fa-flag"></i>
+                            <span>Reports</span>
+                            <span class="badge" id="reportsCount">0</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#notes" data-section="notes">
+                            <i class="fas fa-sticky-note"></i>
+                            <span>Staff Notes</span>
+                        </a>
+                    </li>
+                    <li id="adminSection">
+                        <a href="#settings" data-section="settings">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-left">
+                    <button id="menuToggle" class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2 id="pageTitle">Dashboard</h2>
+                </div>
+                <div class="header-right">
+                    <div class="theme-toggle">
+                        <button id="themeToggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon pending">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>Pending Reports</h3>
+                            <p id="pendingReportsCount">0</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon resolved">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>Resolved Reports</h3>
+                            <p id="resolvedReportsCount">0</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon notes">
+                            <i class="fas fa-sticky-note"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>Staff Notes</h3>
+                            <p id="notesCount">0</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon users">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>Staff Online</h3>
+                            <p id="staffOnlineCount">1</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-cards">
+                    <div class="card recent-reports">
+                        <div class="card-header">
+                            <h3>Recent Reports</h3>
+                            <a href="#reports" class="view-all">View All</a>
+                        </div>
+                        <div class="card-body">
+                            <table class="reports-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Type</th>
+                                        <th>Title</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recentReportsTable">
+                                    <!-- Reports will be loaded here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="card recent-notes">
+                        <div class="card-header">
+                            <h3>Recent Notes</h3>
+                            <a href="#notes" class="view-all">View All</a>
+                        </div>
+                        <div class="card-body">
+                            <div id="recentNotesList" class="notes-list">
+                                <!-- Notes will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reports Section -->
+            <section id="reports" class="content-section">
+                <div class="section-header">
+                    <h2>Reports Management</h2>
+                    <div class="filter-controls">
+                        <div class="filter-group">
+                            <label for="reportStatusFilter">Status:</label>
+                            <select id="reportStatusFilter">
+                                <option value="all">All</option>
+                                <option value="pending">Pending</option>
+                                <option value="in-progress">In Progress</option>
+                                <option value="resolved">Resolved</option>
+                                <option value="rejected">Rejected</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="reportTypeFilter">Type:</label>
+                            <select id="reportTypeFilter">
+                                <option value="all">All Types</option>
+                                <option value="player">Player Report</option>
+                                <option value="bug">Bug Report</option>
+                                <option value="suggestion">Suggestion</option>
+                                <option value="appeal">Ban Appeal</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="search-group">
+                            <input type="text" id="reportSearch" placeholder="Search reports...">
+                            <button id="searchBtn"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-body">
+                        <table class="reports-table full">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Type</th>
+                                    <th>Title</th>
+                                    <th>Submitted By</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="reportsTableBody">
+                                <!-- Reports will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Staff Notes Section -->
+            <section id="notes" class="content-section">
+                <div class="section-header">
+                    <h2>Staff Notes</h2>
+                    <button id="addNoteBtn" class="primary-btn">
+                        <i class="fas fa-plus"></i> Add Note
+                    </button>
+                </div>
+                
+                <div class="notes-grid" id="staffNotesList">
+                    <!-- Notes will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings" class="content-section">
+                <div class="section-header">
+                    <h2>Site Settings</h2>
+                </div>
+                
+                <div class="card">
+                    <div class="card-body">
+                        <form id="settingsForm" class="settings-form">
+                            <div class="form-group">
+                                <label for="siteName">Site Name</label>
+                                <input type="text" id="siteName" name="siteName">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="siteDescription">Site Description</label>
+                                <textarea id="siteDescription" name="siteDescription" rows="3"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="discordLink">Discord Invite Link</label>
+                                <input type="text" id="discordLink" name="discordLink">
+                            </div>
+                            
+                            <div class="form-group toggle-group">
+                                <label for="maintenanceMode">Maintenance Mode</label>
+                                <label class="toggle">
+                                    <input type="checkbox" id="maintenanceMode" name="maintenanceMode">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="primary-btn">Save Settings</button>
+                                <button type="reset" class="secondary-btn">Reset</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Report Detail Modal -->
+    <div id="reportModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalReportTitle">Report Details</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="report-details">
+                    <div class="detail-group">
+                        <label>Report ID:</label>
+                        <span id="modalReportId"></span>
+                    </div>
+                    <div class="detail-group">
+                        <label>Type:</label>
+                        <span id="modalReportType"></span>
+                    </div>
+                    <div class="detail-group">
+                        <label>Submitted By:</label>
+                        <span id="modalReportUser"></span>
+                    </div>
+                    <div class="detail-group">
+                        <label>Discord Tag:</label>
+                        <span id="modalReportDiscord"></span>
+                    </div>
+                    <div class="detail-group">
+                        <label>Date:</label>
+                        <span id="modalReportDate"></span>
+                    </div>
+                    <div class="detail-group">
+                        <label>Status:</label>
+                        <span id="modalReportStatus"></span>
+                    </div>
+                    <div class="detail-group full-width">
+                        <label>Details:</label>
+                        <div id="modalReportDetails" class="report-content"></div>
+                    </div>
+                    <div class="detail-group full-width">
+                        <label>Evidence:</label>
+                        <div id="modalReportEvidence" class="report-content"></div>
+                    </div>
+                </div>
+
+                <div class="report-actions">
+                    <h4>Update Status</h4>
+                    <div class="status-buttons">
+                        <button class="status-btn pending" data-status="pending">Pending</button>
+                        <button class="status-btn in-progress" data-status="in-progress">In Progress</button>
+                        <button class="status-btn resolved" data-status="resolved">Resolved</button>
+                        <button class="status-btn rejected" data-status="rejected">Rejected</button>
+                    </div>
+                    
+                    <h4>Add Note</h4>
+                    <textarea id="reportNoteText" placeholder="Add a note about this report..."></textarea>
+                    <button id="addReportNoteBtn" class="primary-btn">Add Note</button>
+                    
+                    <div class="report-notes">
+                        <h4>Notes History</h4>
+                        <div id="reportNotesHistory" class="notes-history">
+                            <p class="no-notes">No notes added yet</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Note Modal -->
+    <div id="addNoteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Note</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="addNoteForm">
+                    <div class="form-group">
+                        <label for="noteTitle">Title</label>
+                        <input type="text" id="noteTitle" name="noteTitle" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="noteContent">Content</label>
+                        <textarea id="noteContent" name="noteContent" rows="5" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="noteVisibility">Visibility</label>
+                        <select id="noteVisibility" name="noteVisibility">
+                            <option value="all">All Staff</option>
+                            <option value="moderators">Moderators Only</option>
+                            <option value="admins">Admins & Up</option>
+                            <option value="management">Management & Founders</option>
+                            <option value="private">Private (Only Me)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="primary-btn">Save Note</button>
+                        <button type="button" class="secondary-btn cancel-btn">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
