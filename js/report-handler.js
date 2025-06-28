@@ -26,8 +26,22 @@ async function submitToDiscord(reportData) {
     }
     
     if (window.uploadedFiles && window.uploadedFiles.length > 0) {
-        const fileNames = window.uploadedFiles.map(f => f.name).join(', ');
-        embed.fields.push({ name: "Uploaded Files", value: fileNames.substring(0, 500), inline: false });
+        const fileInfo = window.uploadedFiles.map(f => {
+            const fileName = f.name || f;
+            const fileSize = f.size ? ` (${(f.size / 1024).toFixed(1)}KB)` : '';
+            return `${fileName}${fileSize}`;
+        }).join('\n');
+        
+        embed.fields.push({ name: "Uploaded Files", value: fileInfo.substring(0, 1000), inline: false });
+        
+        // Store files in localStorage for viewing
+        const reportId = 'REP' + Date.now();
+        const storedFiles = JSON.parse(localStorage.getItem('ukbrum_files') || '{}');
+        storedFiles[reportId] = window.uploadedFiles;
+        localStorage.setItem('ukbrum_files', JSON.stringify(storedFiles));
+        
+        const viewLink = `${window.location.origin}/view-files?report=${reportId}`;
+        embed.fields.push({ name: "View Files", value: viewLink, inline: false });
     }
 
     try {
@@ -60,7 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 title: formData.get('reportTitle') || 'Untitled Report',
                 details: formData.get('reportDetails') || 'No details provided',
                 evidence: formData.get('evidence') || '',
-                otherDetails: formData.get('otherDetails') || ''
+                otherDetails: formData.get('otherDetails') || '',
+                files: window.uploadedFiles || []
             };
             
             // Generate a unique ID for the report
