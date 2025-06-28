@@ -34,14 +34,7 @@ async function submitToDiscord(reportData) {
         
         embed.fields.push({ name: "Uploaded Files", value: fileInfo.substring(0, 1000), inline: false });
         
-        // Store files in localStorage for viewing
-        const reportId = 'REP' + Date.now();
-        const storedFiles = JSON.parse(localStorage.getItem('ukbrum_files') || '{}');
-        storedFiles[reportId] = window.uploadedFiles;
-        localStorage.setItem('ukbrum_files', JSON.stringify(storedFiles));
-        
-        const viewLink = `${window.location.origin}/view-files?report=${reportId}`;
-        embed.fields.push({ name: "View Files", value: viewLink, inline: false });
+        embed.fields.push({ name: "Note", value: "Files uploaded but cannot be viewed on GitHub Pages hosting. Consider using a file hosting service for evidence.", inline: false });
     }
 
     try {
