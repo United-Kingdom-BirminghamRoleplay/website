@@ -122,8 +122,26 @@ document.addEventListener('DOMContentLoaded', function() {
     if (fileInput) {
         fileInput.addEventListener('change', function(e) {
             const files = Array.from(e.target.files);
-            window.uploadedFiles = [...window.uploadedFiles, ...files];
-            displayFiles();
+            files.forEach(file => {
+                if (file.size > 5 * 1024 * 1024) { // 5MB limit
+                    alert(`File ${file.name} is too large. Maximum size is 5MB.`);
+                    return;
+                }
+                
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const fileData = {
+                        name: file.name,
+                        type: file.type,
+                        size: file.size,
+                        data: event.target.result,
+                        uploadTime: new Date().toISOString()
+                    };
+                    window.uploadedFiles.push(fileData);
+                    displayFiles();
+                };
+                reader.readAsDataURL(file);
+            });
         });
     }
     
@@ -132,9 +150,12 @@ document.addEventListener('DOMContentLoaded', function() {
         window.uploadedFiles.forEach((file, index) => {
             const fileItem = document.createElement('div');
             fileItem.className = 'file-item';
+            const fileName = file.name || file;
+            const fileSize = file.size ? ` (${(file.size / 1024).toFixed(1)}KB)` : '';
+            
             fileItem.innerHTML = `
                 <i class="fas fa-file"></i>
-                <span>${file.name}</span>
+                <span>${fileName}${fileSize}</span>
                 <button type="button" onclick="removeFile(${index})">
                     <i class="fas fa-times"></i>
                 </button>
