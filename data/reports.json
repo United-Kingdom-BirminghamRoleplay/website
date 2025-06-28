@@ -1,0 +1,109 @@
+{
+  "reports": [
+    {
+      "id": "REP001",
+      "type": "player",
+      "title": "Player harassing others",
+      "username": "player123",
+      "discordTag": "player123#1234",
+      "timestamp": "2023-06-15T14:30:00Z",
+      "status": "pending",
+      "details": "This player was harassing others in the game by blocking roads and insulting people.",
+      "evidence": "https://example.com/screenshot1.jpg",
+      "notes": [
+        {
+          "text": "I've spoken to the player and issued a warning.",
+          "author": "mod_user",
+          "timestamp": "2023-06-15T15:45:00Z"
+        }
+      ]
+    },
+    {
+      "id": "REP002",
+      "type": "bug",
+      "title": "Game crashes when entering police station",
+      "username": "gamer456",
+      "discordTag": "gamer456#5678",
+      "timestamp": "2023-06-14T10:15:00Z",
+      "status": "in-progress",
+      "details": "The game consistently crashes when I try to enter the main police station building.",
+      "evidence": "",
+      "notes": [
+        {
+          "text": "Investigating this issue. Seems to be related to recent game update.",
+          "author": "admin_user",
+          "timestamp": "2023-06-14T11:20:00Z"
+        },
+        {
+          "text": "Found the issue. Working on a fix.",
+          "author": "admin_user",
+          "timestamp": "2023-06-15T09:30:00Z"
+        }
+      ]
+    },
+    {
+      "id": "REP003",
+      "type": "suggestion",
+      "title": "Add more ambulance vehicles",
+      "username": "medic789",
+      "discordTag": "medic789#9012",
+      "timestamp": "2023-06-13T16:45:00Z",
+      "status": "resolved",
+      "details": "It would be great to have more variety in ambulance vehicles, maybe add an SUV ambulance?",
+      "evidence": "https://example.com/ambulance_suggestion.jpg",
+      "notes": [
+        {
+          "text": "Good suggestion. I'll forward this to the development team.",
+          "author": "mod_john",
+          "timestamp": "2023-06-13T17:30:00Z"
+        },
+        {
+          "text": "Development team has approved this. New vehicles will be added in the next update.",
+          "author": "manager_user",
+          "timestamp": "2023-06-14T14:15:00Z"
+        }
+      ]
+    },
+    {
+      "id": "REP004",
+      "type": "appeal",
+      "title": "Ban appeal - wrongfully banned",
+      "username": "gamer789",
+      "discordTag": "gamer789#3456",
+      "timestamp": "2023-06-12T09:20:00Z",
+      "status": "rejected",
+      "details": "I was banned for supposedly using hacks, but I wasn't. Please review my case.",
+      "evidence": "https://example.com/gameplay_recording.mp4",
+      "notes": [
+        {
+          "text": "Reviewed the evidence. The ban was justified as the video clearly shows speed hacking.",
+          "author": "mod_sarah",
+          "timestamp": "2023-06-12T11:45:00Z"
+        },
+        {
+          "text": "Double-checked the evidence. Ban will remain in place.",
+          "author": "admin_user",
+          "timestamp": "2023-06-12T14:30:00Z"
+        }
+      ]
+    },
+    {
+      "id": "REP005",
+      "type": "other",
+      "title": "Discord invite link not working",
+      "username": "newplayer123",
+      "discordTag": "newplayer123#7890",
+      "timestamp": "2023-06-11T18:10:00Z",
+      "status": "resolved",
+      "details": "The Discord invite link on the website isn't working. It says it's expired.",
+      "evidence": "",
+      "notes": [
+        {
+          "text": "Fixed the Discord invite link. It was set to expire after 7 days.",
+          "author": "admin_user",
+          "timestamp": "2023-06-11T18:45:00Z"
+        }
+      ]
+    }
+  ]
+}
