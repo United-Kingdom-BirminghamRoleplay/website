@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Report Files - UKBRUM</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/info-pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="UKBRUM Logo">
+                    <h1><span class="full-name">United Kingdom Birmingham RP</span><span class="short-name">UKBRUM</span></h1>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#departments">Departments</a></li>
+                    <li><a href="departments/divisions.html">Divisions</a></li>
+                    <li><a href="info.html">Info</a></li>
+                    <li><a href="index.html#join">Join Us</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn" aria-label="Toggle dark/light mode">
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="info-hero">
+        <div class="container">
+            <h1>Report Files</h1>
+            <p>View uploaded evidence files</p>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="container">
+            <div id="filesContainer" class="files-container">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h2>Loading Files...</h2>
+                    <p>Please wait while we load the report files.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="UKBRUM Logo">
+                    <p>United Kingdom Birmingham RP</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#departments">Departments</a></li>
+                        <li><a href="info.html">Info</a></li>
+                        <li><a href="index.html#join">Join Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 United Kingdom Birmingham RP. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const reportId = urlParams.get('report');
+            const container = document.getElementById('filesContainer');
+            
+            if (!reportId) {
+                container.innerHTML = `
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h2>No Report ID</h2>
+                        <p>Please provide a valid report ID to view files.</p>
+                        <a href="info.html" class="btn primary-btn">Go Back</a>
+                    </div>
+                `;
+                return;
+            }
+            
+            const storedFiles = JSON.parse(localStorage.getItem('ukbrum_files') || '{}');
+            const files = storedFiles[reportId];
+            
+            if (!files || files.length === 0) {
+                container.innerHTML = `
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-file-slash"></i>
+                        </div>
+                        <h2>No Files Found</h2>
+                        <p>No files found for report ID: ${reportId}</p>
+                        <a href="info.html" class="btn primary-btn">Go Back</a>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = `
+                <div class="info-card">
+                    <h2>Report Files (${files.length})</h2>
+                    <div class="files-grid" id="filesGrid"></div>
+                </div>
+            `;
+            
+            const filesGrid = document.getElementById('filesGrid');
+            files.forEach((file, index) => {
+                const fileCard = document.createElement('div');
+                fileCard.className = 'file-card';
+                
+                const isImage = file.type.startsWith('image/');
+                const isPDF = file.type === 'application/pdf';
+                
+                fileCard.innerHTML = `
+                    <div class="file-preview">
+                        ${isImage ? `<img src="${file.data}" alt="${file.name}">` : 
+                          `<i class="fas fa-${isPDF ? 'file-pdf' : 'file'}"></i>`}
+                    </div>
+                    <div class="file-info">
+                        <h3>${file.name}</h3>
+                        <p>Size: ${(file.size / 1024).toFixed(1)}KB</p>
+                        <p>Uploaded: ${new Date(file.uploadTime).toLocaleString()}</p>
+                        <a href="${file.data}" download="${file.name}" class="btn secondary-btn">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                `;
+                
+                filesGrid.appendChild(fileCard);
+            });
+        });
+    </script>
+</body>
+</html>
