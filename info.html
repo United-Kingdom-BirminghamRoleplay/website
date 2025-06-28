@@ -225,25 +225,14 @@
                     </div>
                     
                     <div class="form-group floating-label">
-                        <div class="file-upload-container">
-                            <input type="file" id="evidenceFile" name="evidenceFile" accept="image/*,video/*,.pdf" style="display: none;">
-                            <div class="file-upload-area" onclick="document.getElementById('evidenceFile').click()">
-                                <i class="fas fa-cloud-upload-alt"></i>
-                                <span>Upload evidence files (for reference only)</span>
-                                <small>Files will be listed in report but not stored. Use external hosting for viewable evidence.</small>
-                            </div>
-                            <div class="file-list" id="fileList"></div>
+                        <div class="input-with-icon">
+                            <input type="url" id="evidence" name="evidence" placeholder=" ">
+                            <label for="evidence">Evidence URL (Optional)</label>
+                            <i class="fas fa-link"></i>
                         </div>
-                        <div class="form-group floating-label" style="margin-top: 1rem;">
-                            <div class="input-with-icon">
-                                <input type="url" id="evidence" name="evidence" placeholder=" ">
-                                <label for="evidence">Or paste evidence URL</label>
-                                <i class="fas fa-link"></i>
-                            </div>
-                            <i class="fas fa-check validation-icon valid-icon"></i>
-                            <i class="fas fa-times validation-icon invalid-icon"></i>
-                            <div class="error-message">Please enter a valid URL</div>
-                        </div>
+                        <i class="fas fa-check validation-icon valid-icon"></i>
+                        <i class="fas fa-times validation-icon invalid-icon"></i>
+                        <div class="error-message">Please enter a valid URL</div>
                     </div>
                     
                     <div class="form-actions">
