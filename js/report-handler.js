@@ -25,17 +25,7 @@ async function submitToDiscord(reportData) {
         embed.fields.push({ name: "Other Details", value: reportData.otherDetails.substring(0, 500), inline: false });
     }
     
-    if (window.uploadedFiles && window.uploadedFiles.length > 0) {
-        const fileInfo = window.uploadedFiles.map(f => {
-            const fileName = f.name || f;
-            const fileSize = f.size ? ` (${(f.size / 1024).toFixed(1)}KB)` : '';
-            return `${fileName}${fileSize}`;
-        }).join('\n');
-        
-        embed.fields.push({ name: "Uploaded Files", value: fileInfo.substring(0, 1000), inline: false });
-        
-        embed.fields.push({ name: "Note", value: "Files uploaded but cannot be viewed on GitHub Pages hosting. Consider using a file hosting service for evidence.", inline: false });
-    }
+
 
     try {
         await fetch(webhookUrl, {
@@ -67,8 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 title: formData.get('reportTitle') || 'Untitled Report',
                 details: formData.get('reportDetails') || 'No details provided',
                 evidence: formData.get('evidence') || '',
-                otherDetails: formData.get('otherDetails') || '',
-                files: window.uploadedFiles || []
+                otherDetails: formData.get('otherDetails') || ''
             };
             
             // Generate a unique ID for the report
