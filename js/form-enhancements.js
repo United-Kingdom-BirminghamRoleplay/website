@@ -114,60 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // File upload handling
-    const fileInput = document.getElementById('evidenceFile');
-    const fileList = document.getElementById('fileList');
-    window.uploadedFiles = [];
-    
-    if (fileInput) {
-        fileInput.addEventListener('change', function(e) {
-            const files = Array.from(e.target.files);
-            files.forEach(file => {
-                if (file.size > 5 * 1024 * 1024) { // 5MB limit
-                    alert(`File ${file.name} is too large. Maximum size is 5MB.`);
-                    return;
-                }
-                
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    const fileData = {
-                        name: file.name,
-                        type: file.type,
-                        size: file.size,
-                        data: event.target.result,
-                        uploadTime: new Date().toISOString()
-                    };
-                    window.uploadedFiles.push(fileData);
-                    displayFiles();
-                };
-                reader.readAsDataURL(file);
-            });
-        });
-    }
-    
-    function displayFiles() {
-        fileList.innerHTML = '';
-        window.uploadedFiles.forEach((file, index) => {
-            const fileItem = document.createElement('div');
-            fileItem.className = 'file-item';
-            const fileName = file.name || file;
-            const fileSize = file.size ? ` (${(file.size / 1024).toFixed(1)}KB)` : '';
-            
-            fileItem.innerHTML = `
-                <i class="fas fa-file"></i>
-                <span>${fileName}${fileSize}</span>
-                <button type="button" onclick="removeFile(${index})">
-                    <i class="fas fa-times"></i>
-                </button>
-            `;
-            fileList.appendChild(fileItem);
-        });
-    }
-    
-    window.removeFile = function(index) {
-        window.uploadedFiles.splice(index, 1);
-        displayFiles();
-    };
+
     
     // Clear form functionality
     const clearBtn = form.querySelector('button[type="reset"]');
@@ -184,9 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
             
-            // Clear files
-            window.uploadedFiles = [];
-            displayFiles();
+
             
             // Reset counters
             if (titleCounter) titleCounter.textContent = '0/100';
