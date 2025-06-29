@@ -28,9 +28,10 @@ function disableForm(message, discordLink) {
             <div class="form-disabled-modal">
                 <i class="fas fa-exclamation-triangle"></i>
                 <h2>SECURITY ALERT</h2>
+                <div class="security-code">ERROR CODE: SEC-001</div>
                 <p>${message}</p>
                 <a href="${discordLink}" class="btn">
-                    <i class="fab fa-discord"></i> Go to Discord
+                    <i class="fab fa-discord"></i> Report via Discord
                 </a>
             </div>
         `;
