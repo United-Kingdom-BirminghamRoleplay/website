@@ -1,0 +1,39 @@
+{
+  "staff": [
+    {
+      "name": "John Smith",
+      "role": "Founder",
+      "status": "Active",
+      "specialization": "Community Leadership",
+      "avatar": "images/staff/john-smith.jpg"
+    },
+    {
+      "name": "Sarah Johnson",
+      "role": "Management",
+      "status": "Active",
+      "specialization": "Police Operations",
+      "avatar": "images/staff/sarah-johnson.jpg"
+    },
+    {
+      "name": "Mike Wilson",
+      "role": "Administrator",
+      "status": "Active",
+      "specialization": "Fire & Rescue",
+      "avatar": "images/staff/mike-wilson.jpg"
+    },
+    {
+      "name": "Emma Davis",
+      "role": "Administrator",
+      "status": "Active",
+      "specialization": "Medical Services",
+      "avatar": "images/staff/emma-davis.jpg"
+    },
+    {
+      "name": "Tom Brown",
+      "role": "Moderator",
+      "status": "Active",
+      "specialization": "Traffic Management",
+      "avatar": "images/staff/tom-brown.jpg"
+    }
+  ]
+}

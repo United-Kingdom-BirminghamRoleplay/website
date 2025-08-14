@@ -1,0 +1,202 @@
+{
+  "departments": [
+    {
+      "id": "police",
+      "name": "West Midlands Police",
+      "divisions": [
+        {
+          "id": "firearms",
+          "name": "Firearms Unit",
+          "icon": "fa-shield-alt",
+          "description": "Specially trained officers who respond to incidents involving firearms or threats requiring armed support.",
+          "features": [
+            "Armed response vehicles",
+            "Counter-terrorism operations",
+            "High-risk warrant execution"
+          ]
+        },
+        {
+          "id": "traffic",
+          "name": "Traffic Unit",
+          "icon": "fa-car",
+          "description": "Specialized officers who enforce traffic laws and investigate serious road traffic collisions.",
+          "features": [
+            "High-speed pursuit capability",
+            "Advanced driver training",
+            "Collision investigation"
+          ]
+        },
+        {
+          "id": "dog",
+          "name": "Dog Section",
+          "icon": "fa-paw",
+          "description": "Officers who work with specially trained police dogs to track suspects, find missing persons, and detect contraband.",
+          "features": [
+            "Tracking and apprehension",
+            "Drug and explosive detection",
+            "Public order support"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rmp",
+      "name": "Royal Military Police",
+      "divisions": [
+        {
+          "id": "special-investigation",
+          "name": "Special Investigation Branch",
+          "icon": "fa-search",
+          "description": "Elite investigators who handle serious military crimes and complex investigations.",
+          "features": [
+            "Military crime investigation",
+            "Counter-intelligence operations",
+            "Forensic analysis"
+          ]
+        },
+        {
+          "id": "close-protection",
+          "name": "Close Protection Unit",
+          "icon": "fa-shield-alt",
+          "description": "Specialized officers who provide personal protection for high-ranking military personnel.",
+          "features": [
+            "VIP protection services",
+            "Threat assessment",
+            "Security planning"
+          ]
+        },
+        {
+          "id": "provost",
+          "name": "Provost Company",
+          "icon": "fa-user-shield",
+          "description": "Military police who maintain discipline and order within military establishments.",
+          "features": [
+            "Military discipline enforcement",
+            "Base security operations",
+            "Traffic control"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fire",
+      "name": "West Midlands Fire Service",
+      "divisions": [
+        {
+          "id": "technical-rescue",
+          "name": "Technical Rescue",
+          "icon": "fa-hard-hat",
+          "description": "Specialized firefighters trained in complex rescue operations including building collapse and confined spaces.",
+          "features": [
+            "Urban search and rescue",
+            "Rope rescue operations",
+            "Structural collapse response"
+          ]
+        },
+        {
+          "id": "hazmat",
+          "name": "Hazardous Materials",
+          "icon": "fa-biohazard",
+          "description": "Specially trained firefighters who respond to incidents involving hazardous materials and substances.",
+          "features": [
+            "Chemical identification",
+            "Decontamination procedures",
+            "Specialized protective equipment"
+          ]
+        },
+        {
+          "id": "water-rescue",
+          "name": "Water Rescue",
+          "icon": "fa-water",
+          "description": "Firefighters trained in water rescue operations for floods and water-related emergencies.",
+          "features": [
+            "Swift water rescue",
+            "Flood response",
+            "Boat operations"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ambulance",
+      "name": "West Midlands Ambulance Service",
+      "divisions": [
+        {
+          "id": "hems",
+          "name": "HEMS",
+          "icon": "fa-helicopter",
+          "description": "HEMS provides rapid-response medical care via air ambulance. Operated in partnership with Midlands Air Ambulance Charity, HEMS crews bring critical care to the scene far faster than road ambulances.",
+          "features": [
+            "Attend serious incidents like road traffic collisions, stabbings, or cardiac arrests",
+            "Deliver pre-hospital critical care such as anaesthesia or blood transfusions",
+            "Rapidly airlift patients to major trauma centres"
+          ],
+          "ranks": ["Lead", "Deputy Lead", "Paramedic"]
+        },
+        {
+          "id": "hart",
+          "name": "HART",
+          "icon": "fa-first-aid",
+          "description": "HART teams are specialist paramedics trained to operate in high-risk, hazardous environments that regular ambulance staff cannot enter safely.",
+          "features": [
+            "Respond to incidents involving chemical, biological, radiological or nuclear (CBRN) risks",
+            "Support patients in confined spaces, heights, or collapsed structures",
+            "Assist in major incidents (e.g. train crashes, terrorism, building collapses)"
+          ],
+          "ranks": ["Operations Manager", "Team Leader", "Paramedic"]
+        },
+        {
+          "id": "cct",
+          "name": "CCT",
+          "icon": "fa-heartbeat",
+          "description": "CCT units handle the safe transfer of critically ill patients between hospitals, often requiring intensive monitoring or life support en route.",
+          "features": [
+            "Transport ICU patients to specialist facilities like heart or trauma centres",
+            "Monitor and manage ventilators, medication pumps, and vital signs during transit",
+            "Work alongside critical care nurses and doctors to ensure stability"
+          ],
+          "ranks": ["Lead", "Deputy Lead", "Paramedic"]
+        }
+      ]
+    },
+    {
+      "id": "highways",
+      "name": "National Highways",
+      "divisions": [
+        {
+          "id": "incident-support",
+          "name": "Incident Support",
+          "icon": "fa-traffic-light",
+          "description": "Specialized officers who provide enhanced support during major road incidents.",
+          "features": [
+            "Advanced traffic management",
+            "Scene preservation",
+            "Multi-agency coordination"
+          ]
+        },
+        {
+          "id": "vehicle-recovery",
+          "name": "Vehicle Recovery",
+          "icon": "fa-truck-pickup",
+          "description": "Specialized team equipped to recover and remove disabled or damaged vehicles from highways.",
+          "features": [
+            "Heavy vehicle recovery",
+            "Rapid clearance techniques",
+            "Specialized equipment"
+          ]
+        },
+        {
+          "id": "winter-operations",
+          "name": "Winter Operations",
+          "icon": "fa-snowflake",
+          "description": "Team responsible for keeping roads clear and safe during adverse winter weather.",
+          "features": [
+            "Snow plowing",
+            "Salt spreading",
+            "Weather monitoring"
+          ]
+        }
+      ]
+    }
+  ]
+}
