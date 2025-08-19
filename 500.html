@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Error - UKBRUM</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="shortcut icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/info-pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="UKBRUM Logo">
+                    <h1><span class="full-name">United Kingdom Birmingham Roleplay</span><span class="short-name">UKBRUM</span></h1>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#departments">Departments</a></li>
+                    <li><a href="departments/divisions.html">Divisions</a></li>
+                    <li><a href="info.html">Info</a></li>
+                    <li><a href="index.html#join">Join Us</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn" aria-label="Toggle dark/light mode">
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="info-hero">
+        <div class="container">
+            <h1>500 - Server Error</h1>
+            <p>Something went wrong on our end</p>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="container">
+            <div class="info-card" style="max-width: 600px; margin: 0 auto;">
+                <div class="info-icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h2>Internal Server Error</h2>
+                <p>We're experiencing technical difficulties. Please try again later or contact support if the problem persists.</p>
+                <a href="index.html" class="btn primary-btn">
+                    <i class="fas fa-home"></i> Return Home
+                </a>
+            </div>
+        </div>
+    </section>
+
+<div id="footer"></div>
+
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      // Inject footer HTML
+      document.getElementById("footer").innerHTML = data;
+
+      // Update year dynamically
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Update "last updated" in UK format
+      const lastUpdatedEl = document.getElementById("last-updated");
+      if (lastUpdatedEl) {
+        lastUpdatedEl.textContent = new Date(document.lastModified)
+          .toLocaleDateString("en-GB", {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric"
+          });
+      }
+    })
+    .catch(error => console.error("Error loading footer:", error));
+</script>
+</body>
+</html>
