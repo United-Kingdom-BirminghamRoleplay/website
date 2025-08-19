@@ -1,0 +1,99 @@
+/* Reset sidebar styles */
+.sidebar {
+    all: initial;
+    display: block;
+    width: 250px;
+    min-width: 250px;
+    max-width: 250px;
+    background-color: #1a1a1a;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    height: calc(100vh - 60px);
+    position: fixed;
+    top: 60px;
+    left: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 100;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.sidebar-nav {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.sidebar-nav li {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.sidebar-nav a i {
+    margin-right: 0.8rem;
+    width: 20px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.sidebar-nav li.active a {
+    background: rgba(255, 255, 255, 0.1);
+    color: #1a3c7d;
+    font-weight: 600;
+}
+
+.sidebar-nav li.active a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: #1a3c7d;
+}
+
+.sidebar-nav a:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.badge {
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 10px;
+    padding: 0.1rem 0.5rem;
+    font-size: 0.8rem;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 2rem;
+    width: calc(100% - 250px);
+    box-sizing: border-box;
+}
