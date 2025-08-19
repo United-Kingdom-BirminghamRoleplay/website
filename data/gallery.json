@@ -1,0 +1,40 @@
+{
+  "images": [
+    {
+      "id": "gallery-1",
+      "src": "images/gallery/gallery-1.png",
+      "alt": "UKBRUM Roleplay Scene 1",
+      "title": "Emergency Response"
+    },
+    {
+      "id": "gallery-2", 
+      "src": "images/gallery/gallery-2.png",
+      "alt": "UKBRUM Roleplay Scene 2",
+      "title": "Police Operations"
+    },
+    {
+      "id": "gallery-3",
+      "src": "images/gallery/gallery-3.png", 
+      "alt": "UKBRUM Roleplay Scene 3",
+      "title": "Fire Service"
+    },
+    {
+      "id": "gallery-4",
+      "src": "images/gallery/gallery-4.png",
+      "alt": "UKBRUM Roleplay Scene 4", 
+      "title": "Ambulance Service"
+    },
+    {
+      "id": "gallery-5",
+      "src": "images/gallery/gallery-5.png",
+      "alt": "UKBRUM Roleplay Scene 5",
+      "title": "Traffic Operations"
+    },
+    {
+      "id": "gallery-6",
+      "src": "images/gallery/gallery-6.png",
+      "alt": "UKBRUM Roleplay Scene 6",
+      "title": "Community Events"
+    }
+  ]
+}

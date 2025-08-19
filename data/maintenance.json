@@ -1,0 +1,13 @@
+{
+  "isUnderMaintenance": false,
+  "reason": "Server Upgrades",
+  "estimatedDuration": "2-3 hours",
+  "startTime": "2024-01-15T14:00:00Z",
+  "expectedEndTime": "2024-01-15T17:00:00Z",
+  "message": "We're upgrading our systems to bring you an even better roleplay experience!",
+  "contactInfo": {
+    "discord": "https://discord.gg/ukbrum",
+    "email": "support@ukbrum.com"
+  },
+  "lastUpdated": "2024-01-15T14:30:00Z"
+}

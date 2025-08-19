@@ -1,0 +1,116 @@
+{
+  "staff": [
+    {
+      "name": "Karam",
+      "role": "Founder",
+      "status": "Active",
+      "specialization": "Server oversight",
+      "statement": "Karam is the Founder of United Kingdom: Birmingham Roleplay. Karam started the server in September, 2023 and has been been running it since.",
+      "avatar": "images/staff/owner.png"
+    },
+    {
+      "name": "Sami",
+      "role": "Founder",
+      "status": "Active",
+      "specialization": "Management Director",
+      "statement": "Sami is the Second Founder of United Kingdom: Birmingham Roleplay. Sami has been in the server in November 2nd, 2024 and has been been working here since.",
+      "avatar": "images/staff/owner.png"
+    },
+    {
+      "name": "Callum",
+      "role": "Founder",
+      "status": "Active",
+      "specialization": "Operation Management",
+      "statement": "",
+      "avatar": "images/staff/owner.png"
+    },
+    {
+      "name": "Faheem",
+      "role": "Co-Founder",
+      "status": "Active",
+      "specialization": "OE Director",
+      "statement": "Faheem is one of the Co Founders here in United Kingdom: Birmingham Roleplay. Faheem was first in the server during February 2024 then later retired in June 2024. Faheem made a return in November 15th 2025 in goal to help Sami whilst Karam was on LOA.",
+      "avatar": "images/staff/role-icon-1.png"
+    },
+    {
+      "name": "Not_L4nd",
+      "role": "Co-Founder",
+      "status": "Active",
+      "specialization": "OE Deputy Lead",
+      "statement": "Land is one of the Co Founders here at United Kingdom: Birmingham Roleplay. Land made an entrance around the beggining of 2025 and has been here since.",
+      "avatar": "images/staff/role-icon-1.png"
+    },
+    {
+      "name": "Fynnandelias",
+      "role": "Assistant Foundership",
+      "status": "Active",
+      "specialization": "Sub-Department Director",
+      "statement": "Fynn is one of the Assistant Founders here at United Kingdom: Birmingham Roleplay. Fynn made an entrance in XX of XX. Fynn has loved every hour of being here. ",
+      "avatar": "images/staff/role-icon-12.png"
+    },
+    {
+      "name": "James",
+      "role": "Assistant Foundership",
+      "status": "Active",
+      "specialization": "Leadership Deputy Director",
+      "statement": "James is one of the Assistant Founders here at United Kingdom: Birmingham Roleplay. James an entrance in XX of XX. James has enjoyed it.",
+      "avatar": "images/staff/james.png"
+    },
+    {
+      "name": "Mcrunner",
+      "role": "Assistant Foundership",
+      "status": "Active",
+      "specialization": "Staff Oversight",
+      "statement": "Joshua (McRunner) has been in here for a very long time so we will not mention when he joined, though he loves United Kingdom: Birmingham Roleplay.",
+      "avatar": "images/staff/role-icon-12.png"
+    },
+    {
+      "name": "Josh L",
+      "role": "Assistant Foundership",
+      "status": "Active",
+      "specialization": "Bot Development, Leadership Director",
+      "statement": "Josh has been in United Kingdom: Birmingham Rolplay for a few months. He is an assistant founder here aswell as a developer.",
+      "avatar": "images/staff/role-icon-12.png"
+    },
+    {
+      "name": "Only Braclets",
+      "role": "Assistant Foundership",
+      "status": "Active",
+      "specialization": "Operations Management",
+      "statement": "",
+      "avatar": "images/staff/role-icon-12.png"
+    },
+    {
+      "name": "Max",
+      "role": "Community Leadership",
+      "status": "Active",
+      "specialization": "Management Deputy Director",
+      "statement": "",
+      "avatar": "images/staff/role-icon-6.png"
+    },
+    {
+      "name": "Cors",
+      "role": "Community Leadership",
+      "status": "Active",
+      "specialization": "Low Rank Director",
+      "statement": "",
+      "avatar": "images/staff/role-icon-6.png"
+    },
+    {
+      "name": "Pjer",
+      "role": "Community Leadership",
+      "status": "Active",
+      "specialization": "Strategic Planning",
+      "statement": "",
+      "avatar": "images/staff/role-icon-6.png"
+    },
+    {
+      "name": "Davontae",
+      "role": "Community Leadership",
+      "status": "Active",
+      "specialization": "Strategic Planning",
+      "statement": "",
+      "avatar": "images/staff/role-icon-6.png"
+    }
+  ]
+}

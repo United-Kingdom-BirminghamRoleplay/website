@@ -1,0 +1,29 @@
+{
+  "departments": [
+    {
+      "id": "police",
+      "name": "West Midlands Police",
+      "divisions": []
+    },
+    {
+      "id": "rmp",
+      "name": "Royal Military Police",
+      "divisions": []
+    },
+    {
+      "id": "fire",
+      "name": "West Midlands Fire Service",
+      "divisions": []
+    },
+    {
+      "id": "ambulance",
+      "name": "West Midlands Ambulance Service",
+      "divisions": []
+    },
+    {
+      "id": "highways",
+      "name": "National Highways",
+      "divisions": []
+    }
+  ]
+}
