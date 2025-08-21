@@ -1229,9 +1229,10 @@
 /* Enhanced Staff Directory Styles */
 .staff-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
     align-items: start;
+    justify-items: center;
 }
 
 .staff-card {
@@ -1252,6 +1253,21 @@
     text-align: center;
     position: relative;
     overflow: hidden;
+}
+
+.staff-card[data-role="Founder"] {
+    width: 380px;
+    border: 2px solid rgba(255, 107, 53, 0.4);
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.4),
+        0 0 40px rgba(255, 107, 53, 0.2);
+}
+
+.staff-card[data-role="Founder"]:hover {
+    transform: translateY(-18px) scale(1.02);
+    box-shadow: 
+        0 40px 80px rgba(0, 0, 0, 0.5),
+        0 0 60px rgba(255, 107, 53, 0.3);
 }
 
 .staff-card::before {
@@ -1307,6 +1323,12 @@
     filter: brightness(1.05) contrast(1.1);
 }
 
+.staff-card[data-role="Founder"] .staff-avatar img {
+    width: 140px;
+    height: 140px;
+    border: 5px solid #ff6b35;
+}
+
 .staff-card:hover .staff-avatar img {
     transform: scale(1.12) rotate(2deg);
     box-shadow: 
@@ -1339,6 +1361,11 @@
     text-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
     letter-spacing: 0.5px;
     position: relative;
+}
+
+.staff-card[data-role="Founder"] .staff-info h3 {
+    font-size: 1.7rem;
+    color: #ff6b35;
 }
 
 .staff-info h3::after {
