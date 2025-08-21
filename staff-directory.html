@@ -129,6 +129,7 @@
 
             grid.innerHTML = staff.map(member => `
                 <div class="staff-card" data-role="${member.role}">
+                    <div class="status-indicator ${member.status === 'Active' ? 'online' : member.status === 'Away' ? 'away' : 'offline'}"></div>
                     <div class="staff-avatar">
                         <img src="${member.avatar}" alt="${member.name}" onerror="this.src='images/default-avatar.png'">
                         <div class="role-badge ${member.role.toLowerCase().replace(/\s+/g, '-').replace('&', '')}">${member.role}</div>
@@ -137,6 +138,11 @@
                         <h3>${member.name}</h3>
                         <p class="status"><i class="fas fa-circle"></i> ${member.status}</p>
                         <p class="specialization"><i class="fas fa-star"></i> ${member.specialization}</p>
+                        <div class="skill-tags">
+                            ${(member.skills || ['Leadership', 'Management']).map(skill => 
+                                `<span class="skill-tag">${skill}</span>`
+                            ).join('')}
+                        </div>
                         <div class="staff-statement">
                             <p><i class="fas fa-quote-left"></i> ${member.statement}</p>
                         </div>
