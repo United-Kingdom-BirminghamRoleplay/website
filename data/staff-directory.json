@@ -9,28 +9,12 @@
       "avatar": "images/staff/karam.png"
     },
     {
-      "name": "Sami",
-      "role": "Founder",
-      "status": "Active",
-      "specialization": "Management Director",
-      "statement": "Sami is the Second Founder of United Kingdom: Birmingham Roleplay. Sami has been in the server in November 2nd, 2024 and has been been working here since.",
-      "avatar": "images/staff/sami.png"
-    },
-    {
       "name": "Callum",
       "role": "Founder",
       "status": "Active",
       "specialization": "Operation Management",
       "statement": "",
       "avatar": "images/staff/owner.png"
-    },
-    {
-      "name": "Faheem",
-      "role": "Co-Founder",
-      "status": "Active",
-      "specialization": "OE Director",
-      "statement": "I’m proud to be a member of the Foundership team here at United Kingdom: Birmingham Roleplay. I joined in July 2024, and it has been an incredible journey ever since! I’ve had the chance to meet so many amazing people, make new friends, and contribute to an amazing community. Serving UKBRUM has been a truly rewarding experience, and I’m grateful to be part of it!",
-      "avatar": "images/staff/faheem.png"
     },
     {
       "name": "Not_L4nd",
@@ -42,10 +26,10 @@
     },
     {
       "name": "Fynnandelias",
-      "role": "Assistant Foundership",
+      "role": "Co-Founder",
       "status": "Active",
       "specialization": "Sub-Department Director",
-      "statement": "Im proud to be a assistant founder here at United Kingdom Birmingham Roleplay! I joined last year on the 2nd of august and I remember the first session I joined and instantly wanted to become staff. Whilst being a staff member I have had some ups and downs including retiring and being fired! After some well earnt deeication I made it and here I am now!",
+      "statement": "Im proud to be a Co Founder here at United Kingdom Birmingham Roleplay! I joined last year on the 2nd of august and I remember the first session I joined and instantly wanted to become staff. Whilst being a staff member I have had some ups and downs including retiring and being fired! After some well earnt deeication I made it and here I am now!",
       "avatar": "images/staff/fynn.png"
     },
     {
@@ -106,14 +90,6 @@
     },
     {
       "name": "Davontae",
-      "role": "Community Leadership",
-      "status": "Active",
-      "specialization": "Strategic Planning",
-      "statement": "",
-      "avatar": "images/staff/role-icon-6.png"
-    },
-        {
-      "name": "Shahaana92",
       "role": "Community Leadership",
       "status": "Active",
       "specialization": "Strategic Planning",
