@@ -3,7 +3,19 @@
     {
       "id": "police",
       "name": "West Midlands Police",
-      "divisions": []
+      "divisions": [
+        {
+  "id": "firearms",
+  "name": "Firearms Unit",
+  "icon": "fa-shield-alt",
+  "description": "Specially trained officers who respond to incidents involving firearms.",
+  "features": [
+    "Armed response vehicles",
+    "Counter-terrorism operations",
+    "High-risk warrant execution"
+  ]
+}
+      ]
     },
     {
       "id": "rmp",

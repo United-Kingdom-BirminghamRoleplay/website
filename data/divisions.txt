@@ -1,4 +1,4 @@
-        {
+{
   "id": "firearms",
   "name": "Firearms Unit",
   "icon": "fa-shield-alt",
