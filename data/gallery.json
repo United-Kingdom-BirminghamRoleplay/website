@@ -35,6 +35,12 @@
       "src": "images/gallery/gallery-6.png",
       "alt": "UKBRUM Roleplay Scene 6",
       "title": "Community Events"
+    },
+    {
+      "id": "gallery-7",
+      "src": "images/gallery/gallery-7.png",
+      "alt": "UKBRUM Roleplay Scene 7",
+      "title": "Training Exercises"
     }
   ]
 }
