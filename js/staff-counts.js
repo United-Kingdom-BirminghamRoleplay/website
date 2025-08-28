@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', async function() {
         // Update staff counts in info page
         const foundersElement = document.querySelector('[data-staff="founders"]');
         const coFoundersElement = document.querySelector('[data-staff="coFounders"]');
-        const assistantFoundershipElement = document.querySelector('[data-staff="assistantFoundership"]');
-        const communityLeadershipElement = document.querySelector('[data-staff="communityLeadership"]');
+        const execuativeAssistantElement = document.querySelector('[data-staff="execuativeAssistant"]');
+        const directorateElement = document.querySelector('[data-staff="directorate"]');
         const oversightEnforcementElement = document.querySelector('[data-staff="oversightEnforcement"]');
         const managementElement = document.querySelector('[data-staff="management"]');
         const administratorsElement = document.querySelector('[data-staff="administrators"]');
@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', async function() {
         
         if (foundersElement) foundersElement.textContent = data.founders;
         if (coFoundersElement) coFoundersElement.textContent = data.coFounders;
-        if (assistantFoundershipElement) assistantFoundershipElement.textContent = data.assistantFoundership;
-        if (communityLeadershipElement) communityLeadershipElement.textContent = data.communityLeadership;
+        if (execuativeAssistantElement) execuativeAssistantElement.textContent = data.execuativeAssistant;
+        if (directorateElement) directorateElement.textContent = data.directorate;
         if (oversightEnforcementElement) oversightEnforcementElement.textContent = data.oversightEnforcement;
         if (managementElement) managementElement.textContent = data.management;
         if (administratorsElement) administratorsElement.textContent = data.administrators;

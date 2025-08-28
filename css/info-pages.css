@@ -902,18 +902,20 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
-.role-badge.assistant-foundership {
-    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+.role-badge.execuative-assistant {
+    background: linear-gradient(135deg, #140e65, #28227c);
     box-shadow: 
-        0 8px 25px rgba(255, 107, 107, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        0 8px 25px rgba(40, 34, 124, 0.8),   /* vivid violet-blue outer */
+        0 12px 45px rgba(20, 14, 101, 0.6),  /* deep indigo outer spread */
+        inset 0 1px 2px rgba(255, 255, 255, 0.15); /* subtle inner shine */
 }
 
-.role-badge.community-leadership {
-    background: linear-gradient(135deg, #4a90e2, #357abd);
+.role-badge.directorate {
+    background: linear-gradient(135deg, #e526c2, #e665ce);
     box-shadow: 
-        0 8px 25px rgba(74, 144, 226, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        0 8px 25px rgba(229, 38, 194, 0.7),   /* bright hot-pink glow */
+        0 12px 45px rgba(230, 101, 206, 0.5), /* softer pink outer glow */
+            inset 0 1px 2px rgba(255, 255, 255, 0.15); /* subtle inner shine */
 }
 
 .role-badge.oversight-enforcement {

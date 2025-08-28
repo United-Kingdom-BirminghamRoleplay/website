@@ -34,7 +34,7 @@
     },
     {
       "name": "James",
-      "role": "Assistant Foundership",
+      "role": "Execuative Assistant",
       "status": "Active",
       "specialization": "Leadership Deputy Director",
       "statement": "James is one of the Assistant Founders here at United Kingdom: Birmingham Roleplay. James an entrance in XX of XX. James has enjoyed it.",
@@ -42,47 +42,47 @@
     },
     {
       "name": "Mcrunner",
-      "role": "Assistant Foundership",
+      "role": "Execuative Assistant",
       "status": "Active",
       "specialization": "Staff Oversight",
       "statement": "Joshua (McRunner) has been in here for a very long time so we will not mention when he joined, though he loves United Kingdom: Birmingham Roleplay.",
-      "avatar": "images/staff/role-icon-12.png"
+      "avatar": "images/staff/role-icon-8.png"
     },
     {
       "name": "Josh L",
-      "role": "Assistant Foundership",
+      "role": "Execuative Assistant",
       "status": "Active",
       "specialization": "Bot Development, Leadership Director",
       "statement": "Josh has been in United Kingdom: Birmingham Rolplay for a few months. He is an assistant founder here aswell as a developer.",
-      "avatar": "images/staff/role-icon-12.png"
+      "avatar": "images/staff/role-icon-8.png"
     },
     {
       "name": "Only Braclets",
-      "role": "Assistant Foundership",
+      "role": "Execuative Assistant",
       "status": "Active",
       "specialization": "Operations Management",
       "statement": "",
-      "avatar": "images/staff/role-icon-12.png"
+      "avatar": "images/staff/role-icon-8.png"
     },
     {
       "name": "Max",
-      "role": "Community Leadership",
+      "role": "Directorate",
       "status": "Active",
       "specialization": "Management Deputy Director",
-      "statement": "",
-      "avatar": "images/staff/role-icon-6.png"
+      "statement": "Max has developed a strong foundation of experience since 2023, consistently applying his skills and expertise to contribute to organizational excellence. With a commitment to professionalism and a drive for continuous improvement, he leverages his knowledge to support the objectives of the OE and ensure the highest standards are maintained.",
+      "avatar": "images/staff/role-icon-7.png"
     },
     {
       "name": "Cors",
-      "role": "Community Leadership",
+      "role": "Directorate",
       "status": "Active",
       "specialization": "Low Rank Director",
       "statement": "",
-      "avatar": "images/staff/role-icon-6.png"
+      "avatar": "images/staff/role-icon-7.png"
     },
     {
       "name": "Pjer",
-      "role": "Community Leadership",
+      "role": "Directorate",
       "status": "Active",
       "specialization": "Strategic Planning",
       "statement": "Ex IA. Reinstated as a Trial Administrator at 1st March and now Deputy Director,  never give up.",
@@ -90,11 +90,11 @@
     },
     {
       "name": "Davontae",
-      "role": "Community Leadership",
+      "role": "Directorate",
       "status": "Active",
       "specialization": "Strategic Planning",
       "statement": "",
-      "avatar": "images/staff/role-icon-6.png"
+      "avatar": "images/staff/role-icon-7.png"
     }
   ]
 }
