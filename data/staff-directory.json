@@ -95,6 +95,14 @@
       "specialization": "Strategic Planning",
       "statement": "Hard working and dedicated member of staff.",
       "avatar": "images/staff/role-icon-7.png"
+    },
+    {
+      "name": "Finn",
+      "role": "Website Developer",
+      "status": "Active",
+      "specialization": "Website Management & Development",
+      "statement": "Finn has been contributing to the server since 2025, quickly establishing himself as a talented developer. Leveraging his skills in web development and digital management, he now serves as a management member, helping to maintain high standards across the community’s online platforms and supporting the objectives of the server with professionalism and innovation.",
+      "avatar": "images/staff/default-avatar.png"
     }
   ]
 }
