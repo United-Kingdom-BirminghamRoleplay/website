@@ -905,27 +905,22 @@
 .role-badge.execuative-assistant {
     background: linear-gradient(135deg, #140e65, #28227c);
     box-shadow: 
-        0 8px 25px rgba(40, 34, 124, 0.8),   /* vivid violet-blue outer */
-        0 12px 45px rgba(20, 14, 101, 0.6),  /* deep indigo outer spread */
-        inset 0 1px 2px rgba(255, 255, 255, 0.15); /* subtle inner shine */
+        0 8px 25px rgba(40, 34, 124, 0.8),   
+        0 12px 45px rgba(20, 14, 101, 0.6),  
+        inset 0 1px 2px rgba(255, 255, 255, 0.15); 
 }
 
 .role-badge.directorate {
     background: linear-gradient(135deg, #e526c2, #e665ce);
     box-shadow: 
-        0 8px 25px rgba(229, 38, 194, 0.7),   /* bright hot-pink glow */
-        0 12px 45px rgba(230, 101, 206, 0.5), /* softer pink outer glow */
-        inset 0 1px 2px rgba(255, 255, 255, 0.15); /* subtle inner shine */
+        0 8px 25px rgba(229, 38, 194, 0.7),   
+        0 12px 45px rgba(230, 101, 206, 0.5), 
+        inset 0 1px 2px rgba(255, 255, 255, 0.15); 
 }
 
-.role-badge.website-developer {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    box-shadow: 
-        0 8px 25px rgba(42, 82, 152, 0.7),   /* strong tech-blue glow */
-        0 12px 45px rgba(30, 60, 114, 0.5),  /* deeper outer glow */
-        inset 0 1px 2px rgba(255, 255, 255, 0.1); /* subtle highlight */
 
-}
+
+
 
 .role-badge.oversight-enforcement {
     background: linear-gradient(135deg, #a29bfe, #6c5ce7);
@@ -954,6 +949,102 @@
         0 8px 25px rgba(46, 204, 113, 0.5),
         inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
+
+/* Developer special card */
+.staff-card.website-developer {
+    grid-column: 1 / -1; /* span full width */
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, rgba(0, 255, 200, 0.15), rgba(0, 180, 255, 0.1));
+    border: 2px solid rgba(0, 255, 200, 0.4);
+    box-shadow: 0 6px 25px rgba(0, 255, 200, 0.15);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+/* Glow effect border */
+.staff-card.website-developer::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(135deg, #00ffcc, #00aaff, #00ff99);
+    -webkit-mask: 
+      linear-gradient(#000 0 0) content-box, 
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+/* Banner layout */
+.staff-card.website-developer .dev-banner {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    justify-content: flex-start;
+    z-index: 1;
+    position: relative;
+}
+
+/* Avatar */
+.staff-card.website-developer .dev-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #00ffcc;
+    box-shadow: 0 0 15px rgba(0, 255, 200, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Info text */
+.staff-card.website-developer .dev-info {
+    text-align: left;
+}
+
+.staff-card.website-developer h3 {
+    font-size: 1.4rem;
+    color: #fff;
+    margin: 0;
+}
+
+.staff-card.website-developer .dev-role {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #00ffcc;
+    margin-bottom: 0.3rem;
+    letter-spacing: 1px;
+}
+
+.staff-card.website-developer .dev-statement {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    font-style: italic;
+    color: #ddd;
+    
+    margin-top: 0.8rem;      /* adds space below role */
+    padding-top: 0.6rem;     /* separates visually */
+    border-top: 3px solid rgba(255, 255, 255, 0.1); /* subtle divider */
+}
+
+
+/* Hover effect */
+.staff-card.website-developer:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 255, 200, 0.25);
+    border-color: rgba(0, 255, 200, 0.6);
+}
+
+.staff-card.website-developer:hover .dev-avatar {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 255, 200, 0.6);
+}
+
 
 .staff-info h3 {
     margin-bottom: 1rem;
