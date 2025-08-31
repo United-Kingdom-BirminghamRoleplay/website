@@ -918,10 +918,6 @@
         inset 0 1px 2px rgba(255, 255, 255, 0.15); 
 }
 
-
-
-
-
 .role-badge.oversight-enforcement {
     background: linear-gradient(135deg, #a29bfe, #6c5ce7);
     box-shadow: 
@@ -952,32 +948,31 @@
 
 /* Developer special card */
 .staff-card.website-developer {
-    grid-column: 1 / -1; /* span full width */
+    grid-column: 1 / -1;
     padding: 1rem 2rem;
-    background: linear-gradient(135deg, rgba(0, 255, 200, 0.15), rgba(0, 180, 255, 0.1));
-    border: 2px solid rgba(0, 255, 200, 0.4);
-    box-shadow: 0 6px 25px rgba(0, 255, 200, 0.15);
+    background: linear-gradient(135deg, rgba(0, 255, 200, 0.12), rgba(0, 150, 255, 0.08));
+    border: 2px solid rgba(0, 255, 200, 0.35);
+    box-shadow: 0 6px 20px rgba(0, 255, 200, 0.12);
     border-radius: 20px;
-    position: relative;
-    overflow: hidden;
     transition: all 0.4s ease;
 }
 
-/* Glow effect border */
-.staff-card.website-developer::before {
-    content: "";
-    position: absolute;
-    inset: -2px;
-    border-radius: inherit;
-    padding: 2px;
-    background: linear-gradient(135deg, #00ffcc, #00aaff, #00ff99);
-    -webkit-mask: 
-      linear-gradient(#000 0 0) content-box, 
-      linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-            mask-composite: exclude;
-    pointer-events: none;
-    opacity: 0.7;
+.staff-card.website-developer:hover {
+    transform: translateY(-6px) scale(1.03);
+    background: linear-gradient(135deg, rgba(0, 255, 200, 0.2), rgba(0, 150, 255, 0.15));
+    border-color: rgba(0, 255, 200, 0.6);
+    box-shadow: 0 12px 35px rgba(0, 255, 200, 0.25);
+}
+
+.staff-card.website-developer:hover .dev-avatar {
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 0 20px rgba(0, 255, 200, 0.6);
+    border-color: #00ffee;
+}
+
+.staff-card.website-developer:hover h3,
+.staff-card.website-developer:hover .dev-role {
+    text-shadow: 0 0 6px rgba(0, 255, 200, 0.6);
 }
 
 /* Banner layout */
@@ -997,8 +992,8 @@
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #00ffcc;
-    box-shadow: 0 0 15px rgba(0, 255, 200, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 200, 0.3);
+    transition: all 0.4s ease;
 }
 
 /* Info text */
@@ -1033,12 +1028,6 @@
 }
 
 
-/* Hover effect */
-.staff-card.website-developer:hover {
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 12px 30px rgba(0, 255, 200, 0.25);
-    border-color: rgba(0, 255, 200, 0.6);
-}
 
 .staff-card.website-developer:hover .dev-avatar {
     transform: scale(1.1);
