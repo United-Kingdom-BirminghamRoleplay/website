@@ -41,9 +41,6 @@ function showDevelopmentOverlay() {
                 <button class="btn primary-btn" onclick="window.location.href='../index.html'">
                     <i class="fas fa-home"></i> Home
                 </button>
-                <button class="btn secondary-btn" onclick="this.parentElement.parentElement.parentElement.remove()">
-                    Continue
-                </button>
             </div>
         </div>
     `;
