@@ -622,125 +622,122 @@
 
 .development-overlay {
     position: fixed;
-    top: 80px;
+    top: 0;
     left: 0;
     width: 100%;
-    height: calc(100vh - 80px);
-    background: rgba(0, 0, 0, 0.8);
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.98), rgba(26, 60, 125, 0.9));
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
+    z-index: 9999;
+    backdrop-filter: blur(50px) saturate(150%);
+    animation: fadeIn 0.4s ease;
 }
 
-@keyframes overlayFadeIn {
-    from {
-        opacity: 0;
-        backdrop-filter: blur(0px);
-    }
-    to {
-        opacity: 1;
-        backdrop-filter: blur(20px) saturate(180%);
-    }
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .development-modal {
-    background: rgba(0, 0, 0, 0.9);
-    border-radius: 12px;
-    padding: 2rem;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
+    border-radius: 20px;
+    padding: 2.5rem;
     text-align: center;
-    max-width: 400px;
+    max-width: 450px;
     margin: 2rem;
-    border: 2px solid var(--primary-color);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(30px) saturate(150%);
+    animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.development-modal .icon-container {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.5rem;
+    background: rgba(74, 144, 226, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(74, 144, 226, 0.4);
+}
+
+.development-modal i {
+    font-size: 2rem;
+    color: var(--primary-color);
 }
 
 .development-modal h2 {
-    color: var(--primary-color);
+    color: white;
     margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .development-modal p {
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 2rem;
-    opacity: 0.9;
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 .dev-actions {
     display: flex;
     gap: 1rem;
     justify-content: center;
-}
-
-.development-modal::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), #e74c3c, var(--primary-color));
-    border-radius: 24px 24px 0 0;
-}
-
-@keyframes modalSlideIn {
-    to {
-        transform: translateY(0);
-    }
-}
-
-.development-modal .icon-container {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 2rem;
-    background: rgba(231, 76, 60, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid rgba(231, 76, 60, 0.3);
-}
-
-.development-modal i {
-    font-size: 3.5rem;
-    color: #e74c3c;
-}
-
-.development-modal h2 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    font-weight: 700;
-    text-shadow: 0 2px 10px rgba(74, 144, 226, 0.3);
-}
-
-.development-modal p {
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 2.5rem;
-    font-size: 1.1rem;
-    line-height: 1.7;
+    flex-wrap: wrap;
 }
 
 .development-modal .btn {
-    background: linear-gradient(135deg, var(--primary-color), #3498db);
-    color: white;
-    border: none;
-    padding: 1.2rem 2.5rem;
-    border-radius: 12px;
-    font-size: 1.1rem;
-    font-weight: 600;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: 0.8rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 8px 25px rgba(74, 144, 226, 0.3);
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
 }
 
-.development-modal .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(74, 144, 226, 0.4);
-    background: linear-gradient(135deg, #3a7bc8, #2980b9);
+.development-modal .primary-btn {
+    background: var(--primary-color);
+    color: white;
 }
+
+.development-modal .primary-btn:hover {
+    background: #3a7bc8;
+    transform: translateY(-2px);
+}
+
+.development-modal .secondary-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.development-modal .secondary-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+
 
 /* Responsive Styles */
 @media (max-width: 992px) {
