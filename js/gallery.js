@@ -31,9 +31,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'gallery-item';
                 
-                // Add loading spinner
+                // Add loading spinner with text
                 const loader = document.createElement('div');
                 loader.className = 'gallery-loading';
+                loader.innerHTML = '<div class="spinner"></div><span>Loading...</span>';
                 galleryItem.appendChild(loader);
                 
                 const img = document.createElement('img');
@@ -66,9 +67,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Modal functions
     function openModal(image) {
         modal.style.display = 'block';
-        modalCaption.textContent = 'UKBRUM ERLC';
+        modalCaption.textContent = image.title || 'UKBRUM ERLC';
         resetZoom();
         modalImg.style.transition = 'filter 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+        
+        // Set document title for taskbar
+        document.title = `${image.title || 'Gallery Image'} - UKBRUM`;
+        
         showNotification('Image Opened', 'fa-expand');
         
         // Show loading spinner
@@ -130,6 +135,9 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.style.display = 'none';
         resetZoom();
         resetFilters();
+        
+        // Restore original document title
+        document.title = 'Key Information - UKBRUM';
     }
     
     function toggleZoom() {

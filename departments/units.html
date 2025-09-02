@@ -26,11 +26,7 @@
                     <li><a href="../index.html#join">Join Us</a></li>
                 </ul>
             </nav>
-            <div class="theme-toggle">
-                <button id="theme-toggle-btn" aria-label="Toggle dark/light mode">
-                    <i class="fas fa-sun"></i>
-                </button>
-            </div>
+
             <div class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
             </div>
@@ -251,7 +247,7 @@
 <div id="footer"></div>
 
 <script>
-  fetch("footer.html")
+  fetch("../footer.html")
     .then(response => response.text())
     .then(data => {
       // Inject footer HTML

@@ -13,6 +13,18 @@
     position: relative;
     margin-top: 80px;
     overflow: hidden;
+    animation: heroFadeIn 1s ease-out;
+}
+
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .department-hero::before {
@@ -22,7 +34,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(74, 144, 226, 0.3) 0%, transparent 60%),
+        radial-gradient(circle at 80% 20%, rgba(230, 57, 70, 0.2) 0%, transparent 60%),
+        linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%);
     z-index: 1;
 }
 
@@ -101,6 +116,31 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.department-description::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+    border-radius: 0 2px 2px 0;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .department-description h2 {
@@ -175,6 +215,24 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    animation: slideInRight 0.8s ease-out;
+}
+
+.sidebar-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .sidebar-card h3 {
@@ -269,7 +327,26 @@
     border-radius: var(--card-border-radius);
     overflow: hidden;
     box-shadow: var(--card-shadow);
-    transition: transform var(--transition-speed) ease;
+    transition: all var(--transition-speed) ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+    z-index: 1;
+}
+
+.gallery-item:hover::before {
+    transform: translateX(100%);
 }
 
 .gallery-item:hover {
@@ -569,20 +646,29 @@
 }
 
 .development-modal {
-    background: 
-        linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-    border-radius: 24px;
-    padding: 3.5rem;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 12px;
+    padding: 2rem;
     text-align: center;
-    max-width: 520px;
+    max-width: 400px;
     margin: 2rem;
-    box-shadow: 
-        0 25px 50px rgba(0, 0, 0, 0.4),
-        0 0 0 1px rgba(255, 255, 255, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    position: relative;
+    border: 2px solid var(--primary-color);
+}
+
+.development-modal h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.development-modal p {
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.dev-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
 }
 
 .development-modal::before {

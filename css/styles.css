@@ -23,29 +23,7 @@
     --header-text: #d1d1d1;
 }
 
-.light-mode {
-    --primary-color: #012169; /* Navy Blue */
-    --secondary-color: #C8102E; /* Red */
-    --accent-color: #012169; /* Navy Blue for contrast */
-    --background-gradient: linear-gradient(to bottom right, #e8edf5, #c5d0e6);
-    --text-color: #333;
-    --card-bg: rgba(255, 255, 255, 0.85);
-    --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    --header-bg: rgba(255, 255, 255, 0.95);
-    --footer-bg: rgba(1, 33, 105, 0.95);
-    --footer-text: #fff;
-    --police-accent: #1a5fb4;
-    --fire-accent: #c0392b;
-    --ambulance-accent: #27ae60;
-    --highways-accent: #d35400;
-    --mod-accent: #8e44ad;
-    --logo-glow: 0 0 15px rgba(0, 0, 0, 0.1);
-    --header-text: #012169;
-}
 
-.light-mode .logo h1 {
-    text-shadow: none;
-}
 
 /* General Styles */
 * {
@@ -67,6 +45,14 @@ body {
     background: var(--background-gradient);
     min-height: 100vh;
     transition: all var(--transition-speed) ease;
+    opacity: 0;
+    animation: pageLoad 0.8s ease forwards;
+}
+
+@keyframes pageLoad {
+    to {
+        opacity: 1;
+    }
 }
 
 .container {
@@ -297,40 +283,7 @@ nav ul li a:hover::after {
     box-shadow: 0 0 8px var(--secondary-color);
 }
 
-.theme-toggle {
-    margin-left: 2rem;
-}
 
-#theme-toggle-btn {
-    border: none;
-    color: var(--header-text);
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all var(--transition-speed) ease;
-    padding: 8px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#theme-toggle-btn:hover {
-    transform: rotate(30deg);
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-}
-
-/* Icon colors for different modes */
-.light-mode #theme-toggle-btn i.fa-moon {
-    color: var(--primary-color);
-}
-
-body:not(.light-mode) #theme-toggle-btn i.fa-sun {
-    color: #f1c40f;
-}
 
 .mobile-menu-btn {
     display: none;

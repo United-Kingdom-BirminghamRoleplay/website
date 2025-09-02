@@ -6,7 +6,9 @@
       "status": "Active",
       "specialization": "Server oversight",
       "statement": "Karam is the Founder of United Kingdom: Birmingham Roleplay. Karam started the server in September, 2023 and has been been running it since.",
-      "avatar": "images/staff/karam.png"
+      "avatar": "images/staff/karam.png",
+      "employed": true,
+      "skills": ["Leadership", "Management", "Strategy"]
     },
     {
       "name": "Callum",
@@ -14,7 +16,9 @@
       "status": "Active",
       "specialization": "Operation Management",
       "statement": "Hard working and dedicated member of staff.",
-      "avatar": "images/staff/owner.png"
+      "avatar": "images/staff/owner.png",
+      "employed": true,
+      "skills": ["Operations", "Leadership", "Planning"]
     },
     {
       "name": "Not_L4nd",
@@ -22,7 +26,9 @@
       "status": "Active",
       "specialization": "OE Deputy Lead",
       "statement": "Land is one of the Co Founders here at United Kingdom: Birmingham Roleplay. Land made an entrance around the beggining of 2025 and has been here since.",
-      "avatar": "images/staff/role-icon-1.png"
+      "avatar": "images/staff/role-icon-1.png",
+      "employed": true,
+      "skills": ["Oversight", "Enforcement", "Leadership"]
     },
     {
       "name": "Fynnandelias",
@@ -30,7 +36,9 @@
       "status": "Active",
       "specialization": "Sub-Department Director",
       "statement": "Im proud to be a Co Founder here at United Kingdom Birmingham Roleplay! I joined last year on the 2nd of august and I remember the first session I joined and instantly wanted to become staff. Whilst being a staff member I have had some ups and downs including retiring and being fired! After some well earnt deeication I made it and here I am now!",
-      "avatar": "images/staff/fynn.png"
+      "avatar": "images/staff/fynn.png",
+      "employed": true,
+      "skills": ["Management", "Dedication", "Growth"]
     },
     {
       "name": "James",
@@ -38,7 +46,9 @@
       "status": "Active",
       "specialization": "Leadership Deputy Director",
       "statement": "James is one of the Assistant Founders here at United Kingdom: Birmingham Roleplay. James an entrance in XX of XX. James has enjoyed it.",
-      "avatar": "images/staff/james.png"
+      "avatar": "images/staff/james.png",
+      "employed": true,
+      "skills": ["Leadership", "Direction", "Support"]
     },
     {
       "name": "Mcrunner",
@@ -46,7 +56,9 @@
       "status": "Active",
       "specialization": "Staff Oversight",
       "statement": "Joshua (McRunner) has been in here for a very long time so we will not mention when he joined, though he loves United Kingdom: Birmingham Roleplay.",
-      "avatar": "images/staff/role-icon-8.png"
+      "avatar": "images/staff/role-icon-8.png",
+      "employed": true,
+      "skills": ["Oversight", "Experience", "Dedication"]
     },
     {
       "name": "Josh L",
@@ -54,7 +66,9 @@
       "status": "Active",
       "specialization": "Bot Development, Leadership Director",
       "statement": "Josh has been in United Kingdom: Birmingham Rolplay for a few months. He is an assistant founder here aswell as a developer.",
-      "avatar": "images/staff/role-icon-8.png"
+      "avatar": "images/staff/role-icon-8.png",
+      "employed": true,
+      "skills": ["Development", "Bots", "Leadership"]
     },
     {
       "name": "Only Braclets",
@@ -62,7 +76,9 @@
       "status": "Active",
       "specialization": "Operations Management",
       "statement": "Hard working and dedicated member of staff.",
-      "avatar": "images/staff/role-icon-8.png"
+      "avatar": "images/staff/role-icon-8.png",
+      "employed": true,
+      "skills": ["Operations", "Management", "Efficiency"]
     },
     {
       "name": "Max",
@@ -70,7 +86,9 @@
       "status": "Active",
       "specialization": "Oversight & Enforcement Director",
       "statement": "Max has developed a strong foundation of experience since 2023, consistently applying his skills and expertise to contribute to organizational excellence. With a commitment to professionalism and a drive for continuous improvement, he leverages his knowledge to support the objectives of the OE and ensure the highest standards are maintained.",
-      "avatar": "images/staff/max.png"
+      "avatar": "images/staff/max.png",
+      "employed": true,
+      "skills": ["Oversight", "Standards", "Excellence"]
     },
     {
       "name": "Cors",
@@ -78,7 +96,9 @@
       "status": "Active",
       "specialization": "Low Rank Director",
       "statement": "Hard working and dedicated member of staff.",
-      "avatar": "images/staff/role-icon-7.png"
+      "avatar": "images/staff/role-icon-7.png",
+      "employed": true,
+      "skills": ["Direction", "Training", "Support"]
     },
     {
       "name": "Pjer",
@@ -86,7 +106,9 @@
       "status": "Active",
       "specialization": "Strategic Planning",
       "statement": "Ex IA. Reinstated as a Trial Administrator at 1st March and now Deputy Director,  never give up.",
-      "avatar": "images/staff/pjeir.jpg"
+      "avatar": "images/staff/pjeir.jpg",
+      "employed": true,
+      "skills": ["Strategy", "Resilience", "Planning"]
     },
     {
       "name": "Davontae",
@@ -94,15 +116,19 @@
       "status": "Active",
       "specialization": "Strategic Planning",
       "statement": "Hard working and dedicated member of staff.",
-      "avatar": "images/staff/role-icon-7.png"
+      "avatar": "images/staff/role-icon-7.png",
+      "employed": true,
+      "skills": ["Strategy", "Planning", "Analysis"]
     },
     {
       "name": "Finn",
       "role": "Website Developer",
       "status": "Active",
       "specialization": "Website Management & Development",
-      "statement": "Finn has been contributing to the server since 2025, quickly establishing himself as a talented developer. Leveraging his skills in web development and digital management, he now serves as a management member, helping to maintain high standards across the community’s online platforms and supporting the objectives of the server with professionalism and innovation.",
-      "avatar": "images/staff/default-avatar.png"
+      "statement": "Finn has been contributing to the server since 2025, quickly establishing himself as a talented developer. Leveraging his skills in web development and digital management, he now serves as a management member, helping to maintain high standards across the community's online platforms and supporting the objectives of the server with professionalism and innovation.",
+      "avatar": "images/staff/default-avatar.png",
+      "employed": true,
+      "skills": ["Web Dev", "CSS", "JavaScript", "Design"]
     }
   ]
 }

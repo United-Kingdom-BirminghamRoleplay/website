@@ -35,11 +35,16 @@ function showDevelopmentOverlay() {
             <div class="icon-container">
                 <i class="fas fa-tools"></i>
             </div>
-            <h2>Department Under Development</h2>
-            <p>This department is currently under development. We're working hard to bring you comprehensive information and features. Please check back soon for updates.</p>
-            <button class="btn primary-btn" onclick="window.location.href='../index.html'">
-                <i class="fas fa-home"></i> Return Home
-            </button>
+            <h2>Under Development</h2>
+            <p>This page is currently being worked on. Please check back later.</p>
+            <div class="dev-actions">
+                <button class="btn primary-btn" onclick="window.location.href='../index.html'">
+                    <i class="fas fa-home"></i> Home
+                </button>
+                <button class="btn secondary-btn" onclick="this.parentElement.parentElement.parentElement.remove()">
+                    Continue
+                </button>
+            </div>
         </div>
     `;
     document.body.appendChild(overlay);

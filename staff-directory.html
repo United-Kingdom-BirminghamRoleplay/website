@@ -8,9 +8,11 @@
     <link rel="shortcut icon" type="image/png" href="images/logo.png">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/info-pages.css">
+    <link rel="stylesheet" href="css/accessibility.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="js/maintenance-check.js"></script>
+    <script src="js/maintenance-check-simple.js"></script>
     <script src="js/script.js" defer></script>
+    <script src="js/accessibility.js" defer></script>
 </head>
 <body>
     <header>
@@ -31,11 +33,7 @@
                     <li><a href="index.html#join">Join Us</a></li>
                 </ul>
             </nav>
-            <div class="theme-toggle">
-                <button id="theme-toggle-btn" aria-label="Toggle dark/light mode">
-                    <i class="fas fa-sun"></i>
-                </button>
-            </div>
+
             <div class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
             </div>
@@ -121,57 +119,95 @@
 
         function displayStaff(staff) {
             const grid = document.getElementById('staffGrid');
+            const container = document.querySelector('.info-section .container');
+            
+            // Remove existing past staff section
+            const existingPastSection = container.querySelector('.past-staff-section');
+            if (existingPastSection) {
+                existingPastSection.remove();
+            }
             
             if (staff.length === 0) {
                 grid.innerHTML = '<div class="no-results">No staff members found</div>';
                 return;
             }
 
-grid.innerHTML = staff.map(member => {
-    const roleClass = member.role.toLowerCase().replace(/\s+/g, '-').replace('&', '');
-    
-    // If Website Developer, render a special banner card
-    if (member.role === "Website Developer") {
-        return `
-            <div class="staff-card website-developer" data-role="${member.role}">
-                <div class="dev-banner">
-                    <img class="dev-avatar" src="${member.avatar}" alt="${member.name}" onerror="this.src='images/default-avatar.png'">
-                    <div class="dev-info">
-                        <h3>${member.name}</h3>
-                        <span class="dev-role">${member.role}</span>
-                        <p class="dev-statement">${member.statement}</p>
+            // Separate current and past staff
+            const currentStaff = staff.filter(member => member.employed !== false);
+            const pastStaff = allStaff.filter(member => member.employed === false);
+
+            grid.innerHTML = currentStaff.map(member => {
+                const roleClass = member.role.toLowerCase().replace(/\s+/g, '-').replace('&', '');
+                
+                // If Website Developer, render a special banner card
+                if (member.role === "Website Developer") {
+                    return `
+                        <div class="staff-card website-developer" data-role="${member.role}">
+                            <div class="dev-banner">
+                                <img class="dev-avatar" src="${member.avatar}" alt="${member.name}" onerror="this.src='images/default-avatar.png'">
+                                <div class="dev-info">
+                                    <h3>${member.name}</h3>
+                                    <span class="dev-role">${member.role}</span>
+                                    <p class="dev-statement">${member.statement}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                // Default staff card
+                return `
+                    <div class="staff-card ${roleClass}" data-role="${member.role}">
+                        <div class="status-indicator ${member.status === 'Active' ? 'online' : member.status === 'Away' ? 'away' : 'offline'}"></div>
+                        <div class="staff-avatar">
+                            <img src="${member.avatar}" alt="${member.name}" onerror="this.src='images/default-avatar.png'">
+                            <div class="role-badge ${roleClass}">${member.role}</div>
+                        </div>
+                        <div class="staff-info">
+                            <h3>${member.name}</h3>
+                            <p class="status"><i class="fas fa-circle"></i> ${member.status}</p>
+                            <p class="specialization"><i class="fas fa-star"></i> ${member.specialization}</p>
+                            <div class="skill-tags">
+                                ${(member.skills || ['Leadership', 'Management']).map(skill => 
+                                    `<span class="skill-tag">${skill}</span>`
+                                ).join('')}
+                            </div>
+                            <div class="staff-statement">
+                                <p><i class="fas fa-quote-left"></i> ${member.statement}</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        `;
-    }
+                `;
+            }).join('');
 
-    // Default staff card
-    return `
-        <div class="staff-card ${roleClass}" data-role="${member.role}">
-            <div class="status-indicator ${member.status === 'Active' ? 'online' : member.status === 'Away' ? 'away' : 'offline'}"></div>
-            <div class="staff-avatar">
-                <img src="${member.avatar}" alt="${member.name}" onerror="this.src='images/default-avatar.png'">
-                <div class="role-badge ${roleClass}">${member.role}</div>
-            </div>
-            <div class="staff-info">
-                <h3>${member.name}</h3>
-                <p class="status"><i class="fas fa-circle"></i> ${member.status}</p>
-                <p class="specialization"><i class="fas fa-star"></i> ${member.specialization}</p>
-                <div class="skill-tags">
-                    ${(member.skills || ['Leadership', 'Management']).map(skill => 
-                        `<span class="skill-tag">${skill}</span>`
-                    ).join('')}
-                </div>
-                <div class="staff-statement">
-                    <p><i class="fas fa-quote-left"></i> ${member.statement}</p>
-                </div>
-            </div>
-        </div>
-    `;
-}).join('');
-
-
+            // Add past staff section if there are any and we're showing all staff
+            if (pastStaff.length > 0 && (filteredStaff === allStaff || filteredStaff.some(member => member.employed === false))) {
+                const pastSection = document.createElement('div');
+                pastSection.className = 'past-staff-section';
+                pastSection.innerHTML = `
+                    <h2 class="past-staff-title">Past Leadership</h2>
+                    <div class="past-staff-grid">
+                        ${pastStaff.map(member => `
+                            <div class="past-staff-card" data-role="${member.role}">
+                                <div class="past-staff-avatar">
+                                    <img src="${member.avatar}" alt="${member.name}" onerror="this.src='images/default-avatar.png'">
+                                    <div class="past-role-badge">${member.role}</div>
+                                </div>
+                                <div class="past-staff-info">
+                                    <h4>${member.name}</h4>
+                                    <p class="past-specialization">${member.specialization}</p>
+                                    <div class="past-skill-tags">
+                                        ${(member.skills || []).map(skill => 
+                                            `<span class="past-skill-tag">${skill}</span>`
+                                        ).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                container.appendChild(pastSection);
+            }
         }
 
         function setupSearch() {

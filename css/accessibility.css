@@ -1,0 +1,204 @@
+/* Accessibility Panel Styles - Taskbar Integration */
+.accessibility-panel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2000;
+    pointer-events: none;
+}
+
+.accessibility-toggle {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    pointer-events: all;
+    font-weight: 500;
+}
+
+.accessibility-toggle:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.accessibility-content {
+    position: absolute;
+    bottom: 50px;
+    right: 20px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    min-width: 280px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    pointer-events: all;
+}
+
+.accessibility-content.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.accessibility-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.setting-group {
+    margin-bottom: 1rem;
+}
+
+.setting-group label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.setting-group select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.setting-group select:focus {
+    outline: 2px solid var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.reset-btn {
+    width: 100%;
+    padding: 0.7rem;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.reset-btn:hover {
+    background: #c73e47;
+    transform: translateY(-1px);
+}
+
+/* Font Size Settings */
+.font-size-large {
+    font-size: 1.1em;
+}
+
+.font-size-extra-large {
+    font-size: 1.25em;
+}
+
+.font-size-large h1, .font-size-extra-large h1 {
+    font-size: 1.2em;
+}
+
+.font-size-large h2, .font-size-extra-large h2 {
+    font-size: 1.15em;
+}
+
+.font-size-large h3, .font-size-extra-large h3 {
+    font-size: 1.1em;
+}
+
+/* High Contrast Settings */
+.contrast-high {
+    --text-color: #ffffff;
+    --background-gradient: linear-gradient(to bottom right, #000000, #1a1a1a);
+    --card-bg: rgba(0, 0, 0, 0.9);
+    --primary-color: #00ffff;
+    --secondary-color: #ffff00;
+}
+
+.contrast-high .btn {
+    border: 2px solid currentColor;
+}
+
+.contrast-high a {
+    text-decoration: underline;
+}
+
+/* Animation Settings */
+.animations-reduced * {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.3s !important;
+}
+
+.animations-disabled * {
+    animation: none !important;
+    transition: none !important;
+}
+
+.animations-disabled .slide {
+    transition: opacity 0.1s ease !important;
+}
+
+/* Enhanced Focus Indicators */
+.focus-enhanced *:focus {
+    outline: 3px solid var(--primary-color) !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 5px rgba(74, 144, 226, 0.3) !important;
+}
+
+.focus-enhanced button:focus,
+.focus-enhanced a:focus,
+.focus-enhanced input:focus,
+.focus-enhanced select:focus {
+    background-color: rgba(74, 144, 226, 0.1) !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .accessibility-toggle {
+        right: 10px;
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .accessibility-content {
+        right: 10px;
+        left: 10px;
+        min-width: auto;
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .accessibility-toggle span {
+        display: none;
+    }
+    
+    .accessibility-toggle {
+        padding: 8px;
+        border-radius: 50%;
+    }
+}
