@@ -717,13 +717,22 @@
 }
 
 .development-modal .primary-btn {
-    background: var(--primary-color);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1));
     color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
 }
 
 .development-modal .primary-btn:hover {
-    background: #3a7bc8;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15));
+    border-color: rgba(255, 255, 255, 0.5);
     transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.development-modal .primary-btn i {
+    color: var(--primary-color);
+    filter: drop-shadow(0 0 8px rgba(74, 144, 226, 0.6));
 }
 
 .development-modal .secondary-btn {
