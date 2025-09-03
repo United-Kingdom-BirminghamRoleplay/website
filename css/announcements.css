@@ -1,0 +1,104 @@
+/* Announcement Banner Styles */
+.announcement-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    animation: slideDown 0.3s ease;
+}
+
+.announcement-banner.info {
+    background: linear-gradient(135deg, var(--primary-color), #3498db);
+    color: white;
+}
+
+.announcement-banner.warning {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    color: white;
+}
+
+.announcement-banner.success {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: white;
+}
+
+.announcement-banner.error {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+}
+
+.announcement-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+.announcement-text {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.announcement-text strong {
+    font-weight: 600;
+}
+
+.announcement-text a {
+    color: white;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.announcement-text a:hover {
+    text-decoration: none;
+}
+
+.announcement-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 0.2rem;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+    opacity: 0.8;
+}
+
+.announcement-close:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .announcement-banner {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.85rem;
+    }
+    
+    .announcement-text {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+    
+    .announcement-content {
+        gap: 0.5rem;
+    }
+}

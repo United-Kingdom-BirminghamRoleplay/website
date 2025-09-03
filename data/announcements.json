@@ -1,0 +1,23 @@
+{
+  "_comments": {
+    "id": "Unique identifier for the announcement. Change this when creating a new announcement to reset dismissal status for all users.",
+    "active": "Set to true to show the announcement, false to hide it completely.",
+    "type": "Banner color/style. Options: 'info' (blue), 'warning' (orange), 'success' (green), 'error' (red).",
+    "title": "Bold heading text displayed first in the announcement.",
+    "message": "Main announcement text displayed after the title.",
+    "link": "Optional. Remove entire 'link' object if no button needed. 'text' is button label, 'url' is destination.",
+    "dismissible": "Set to true to allow users to close the announcement, false to make it permanent until you disable it."
+  },
+  "announcement": {
+    "id": "welcome-website",
+    "active": true,
+    "type": "info",
+    "title": "Welcome to the new UKBRUM Website!",
+    "message": "Welcome to the UKBRUM website, we hope you find everything your looking for here!",
+    "link": {
+      "text": "Join Discord",
+      "url": "https://discord.gg/ukbrum"
+    },
+    "dismissible": true
+  }
+}
