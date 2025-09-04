@@ -1,0 +1,166 @@
+/* Department Status Styles */
+
+/* Closure Overlay */
+.department-closure-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(231, 76, 60, 0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    backdrop-filter: blur(20px);
+    animation: fadeIn 0.4s ease;
+}
+
+.closure-modal {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: center;
+    max-width: 500px;
+    margin: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(30px);
+}
+
+.closure-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: rgba(231, 76, 60, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(231, 76, 60, 0.4);
+}
+
+.closure-icon i {
+    font-size: 2.5rem;
+    color: #e74c3c;
+}
+
+.closure-modal h2 {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.closure-reason {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.reopen-date, .closure-contact {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.reopen-date i, .closure-contact i {
+    color: var(--primary-color);
+}
+
+.closure-actions {
+    margin-top: 2rem;
+}
+
+/* Closed Department Cards */
+.department-closed {
+    opacity: 0.7;
+    position: relative;
+    overflow: visible;
+}
+
+.department-closed::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(231, 76, 60, 0.1);
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.closure-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.development-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.department-closed .card-icon {
+    opacity: 0.6;
+}
+
+.department-closed h3 {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .closure-modal {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
+    }
+    
+    .closure-modal h2 {
+        font-size: 1.5rem;
+    }
+    
+    .closure-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .closure-icon i {
+        font-size: 2rem;
+    }
+}

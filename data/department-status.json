@@ -1,0 +1,40 @@
+{
+  "_comments": {
+    "status": "Set to 'open' for normal operation, 'closed' to show closure message",
+    "reason": "Explanation for why the department is closed (only shown when status is 'closed')",
+    "expectedReopen": "Optional. When the department is expected to reopen (e.g., 'Next week', 'TBA', '15th January')",
+    "contact": "Optional. Alternative contact method while closed (e.g., 'Contact leadership via Discord')"
+  },
+  "departments": {
+    "police": {
+      "status": "open",
+      "reason": "",
+      "expectedReopen": "",
+      "contact": ""
+    },
+    "rmp": {
+      "status": "open", 
+      "reason": "",
+      "expectedReopen": "",
+      "contact": ""
+    },
+    "fire": {
+      "status": "open",
+      "reason": "",
+      "expectedReopen": "",
+      "contact": ""
+    },
+    "ambulance": {
+      "status": "closed",
+      "reason": "Restructuring department leadership and training programs",
+      "expectedReopen": "End of January 2025",
+      "contact": "Contact @Leadership via Discord for urgent matters"
+    },
+    "highways": {
+      "status": "open",
+      "reason": "",
+      "expectedReopen": "",
+      "contact": ""
+    }
+  }
+}
