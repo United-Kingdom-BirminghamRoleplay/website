@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let hue = 0;
     let blur = 0;
     let sepia = 0;
+    let isDragging = false;
+    let startX, startY, currentX = 0, currentY = 0;
 
     // Load gallery images
     fetch('data/gallery.json')
@@ -31,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'gallery-item';
                 
-                // Add loading spinner with text
                 const loader = document.createElement('div');
                 loader.className = 'gallery-loading';
                 loader.innerHTML = '<div class="spinner"></div><span>Loading...</span>';
@@ -41,15 +42,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 img.alt = image.alt;
                 img.title = image.title;
                 
-                // Add click event to both container and image
                 galleryItem.addEventListener('click', () => openModal(image));
                 img.addEventListener('click', () => openModal(image));
                 
                 galleryItem.appendChild(img);
                 galleryGrid.appendChild(galleryItem);
                 
-                // Load image immediately
-                img.src = image.src;
                 img.onload = () => {
                     img.classList.add('loaded');
                     loader.remove();
@@ -58,86 +56,79 @@ document.addEventListener('DOMContentLoaded', function() {
                     loader.remove();
                     galleryItem.innerHTML = '<div class="error-placeholder">Image failed to load</div>';
                 };
+                img.src = image.src;
             });
         })
         .catch(() => {
             galleryGrid.innerHTML = '<div class="error-message">Error loading gallery</div>';
         });
 
-    // Modal functions
     function openModal(image) {
         modal.style.display = 'block';
         modalCaption.textContent = image.title || 'UKBRUM ERLC';
         resetZoom();
         modalImg.style.transition = 'filter 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
         
-        // Set document title for taskbar
         document.title = `${image.title || 'Gallery Image'} - UKBRUM`;
+        
+        const header = document.querySelector('header');
+        if (header) {
+            header.style.transition = 'transform 0.3s ease';
+            header.style.transform = 'translateY(-100%)';
+        }
         
         showNotification('Image Opened', 'fa-expand');
         
-        // Show loading spinner
         const loader = document.getElementById('modalLoader');
         loader.style.display = 'block';
         modalImg.classList.remove('loaded');
         
-        // Fixed 3 second delay or actual load time
         let imageLoaded = false;
         let timerComplete = false;
         
-        // Start loading image immediately
         modalImg.src = image.src;
         modalImg.onload = () => {
             imageLoaded = true;
             if (timerComplete) {
-                modalImg.classList.add('loaded');
-                loader.style.display = 'none';
-                // Apply subtle automatic enhancement
-                brightness = 110;
-                contrast = 115;
-                saturation = 115;
-                hue = 2;
-                updateFilters();
-                // Add subtle glow effect
-                modalImg.style.boxShadow = '0 0 30px rgba(74, 144, 226, 0.3)';
-                modalImg.style.borderRadius = '8px';
-                // Show notification after enhancement
-                setTimeout(() => {
-                    showNotification('Image AI Enhanced', 'fa-magic');
-                }, 200);
+                completeImageLoad();
             }
         };
         
-        // 3 second minimum delay
         setTimeout(() => {
             timerComplete = true;
             if (imageLoaded) {
-                modalImg.classList.add('loaded');
-                loader.style.display = 'none';
-                // Apply subtle automatic enhancement
-                brightness = 110;
-                contrast = 115;
-                saturation = 115;
-                hue = 2;
-                updateFilters();
-                // Add subtle glow effect
-                modalImg.style.boxShadow = '0 0 30px rgba(74, 144, 226, 0.3)';
-                modalImg.style.borderRadius = '8px';
-                // Show notification after enhancement
-                setTimeout(() => {
-                    showNotification('Image AI Enhanced', 'fa-magic');
-                }, 200);
+                completeImageLoad();
             }
         }, 3000);
+        
+        function completeImageLoad() {
+            modalImg.classList.add('loaded');
+            loader.style.display = 'none';
+            brightness = 110;
+            contrast = 115;
+            saturation = 115;
+            hue = 2;
+            updateFilters();
+            modalImg.style.boxShadow = '0 0 30px rgba(74, 144, 226, 0.3)';
+            modalImg.style.borderRadius = '8px';
+            setTimeout(() => {
+                showNotification('Image Enhancement complete by AI', 'fa-magic');
+            }, 200);
+        }
     }
 
     function closeModal() {
-        modal.style.display = 'none';
-        resetZoom();
-        resetFilters();
+        const header = document.querySelector('header');
+        if (header) {
+            header.style.transform = 'translateY(0)';
+        }
         
-        // Restore original document title
-        document.title = 'Key Information - UKBRUM';
+        setTimeout(() => {
+            modal.style.display = 'none';
+            resetZoom();
+            resetFilters();
+            document.title = 'Key Information - UKBRUM';
+        }, 300);
     }
     
     function toggleZoom() {
@@ -147,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
             zoomBtn.innerHTML = '<i class="fas fa-search-minus"></i>';
             zoomBtn.title = 'Zoom Out';
             zoomBtn.classList.add('active');
-            showNotification('Zoomed In 2.5x', 'fa-search-plus');
+            showNotification('Zoomed In 1.8x', 'fa-search-plus');
         } else {
             modalImg.classList.remove('zoomed');
             zoomBtn.innerHTML = '<i class="fas fa-search-plus"></i>';
@@ -163,6 +154,10 @@ document.addEventListener('DOMContentLoaded', function() {
         zoomBtn.innerHTML = '<i class="fas fa-search-plus"></i>';
         zoomBtn.title = 'Zoom In';
         zoomBtn.classList.remove('active');
+        currentX = 0;
+        currentY = 0;
+        modalImg.style.transform = '';
+        modalImg.style.cursor = 'zoom-in';
     }
     
     function adjustBrightness() {
@@ -244,11 +239,41 @@ document.addEventListener('DOMContentLoaded', function() {
     blurBtn.addEventListener('click', adjustBlur);
     sepiaBtn.addEventListener('click', adjustSepia);
     resetBtn.addEventListener('click', resetFilters);
-    // Image click removed - use zoom button only
+    
+    modalImg.addEventListener('mousedown', (e) => {
+        if (isZoomed) {
+            isDragging = true;
+            startX = e.clientX - currentX;
+            startY = e.clientY - currentY;
+            modalImg.style.cursor = 'grabbing';
+        }
+    });
+    
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging && isZoomed) {
+            e.preventDefault();
+            currentX = e.clientX - startX;
+            currentY = e.clientY - startY;
+            modalImg.style.transform = `translate(calc(-50% + ${currentX}px), calc(-50% + ${currentY}px)) scale(1.8)`;
+        }
+    });
+    
+    document.addEventListener('mouseup', () => {
+        if (isDragging) {
+            isDragging = false;
+            modalImg.style.cursor = isZoomed ? 'zoom-out' : 'zoom-in';
+        }
+    });
+    
+    modalImg.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (!isDragging) {
+            toggleZoom();
+        }
+    });
     
     modal.addEventListener('click', closeModal);
     
-    // Prevent modal from closing when clicking on content
     document.querySelector('.modal-content').addEventListener('click', (e) => {
         e.stopPropagation();
     });
