@@ -19,13 +19,13 @@
       "contact": ""
     },
     "fire": {
-      "status": "open",
-      "reason": "",
-      "expectedReopen": "",
-      "contact": ""
+      "status": "closed",
+      "reason": "Inactive and looking for new Department Leadership. (If you would like to become leadership please contact Foundership via Discord)",
+      "expectedReopen": "Unknown",
+      "contact": "Contact: Foundership via Discord"
     },
     "ambulance": {
-      "status": "closed",
+      "status": "open",
       "reason": "Restructuring department leadership and training programs",
       "expectedReopen": "End of January 2025",
       "contact": "Contact @Leadership via Discord for urgent matters"
