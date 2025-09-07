@@ -16,6 +16,31 @@
     overflow: hidden;
 }
 
+/* Page-specific hero backgrounds */
+.info-hero.key-information {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/headers/key-information.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.info-hero.legal-information {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/headers/legal-information.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.info-hero.staff-directory {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/headers/staff-directory.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.info-hero.rules {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/headers/rules.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
 .info-hero::before {
     content: '';
     position: absolute;
@@ -1839,7 +1864,7 @@
     border-radius: 1px;
 }
 
-.staff-info p {
+.staff-info .staff-name {
     margin-bottom: 1rem;
     display: flex;
     align-items: center;

@@ -502,18 +502,20 @@ nav ul li a:hover::after {
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     font-weight: 700;
     letter-spacing: 1px;
-    background: linear-gradient(90deg, #e63946, #f1faee, #a8dadc, #457b9d, #1d3557);
-    background-size: 400% 400%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradientText 10s ease infinite;
+    color: #ff4444;
+    text-shadow: 0 0 20px rgba(255, 68, 68, 0.8);
+    animation: redGlow 3s ease-in-out infinite alternate;
 }
 
-@keyframes gradientText {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+@keyframes redGlow {
+    0% { 
+        color: #cc0000;
+        text-shadow: 0 0 10px rgba(204, 0, 0, 0.5);
+    }
+    100% { 
+        color: #ff4444;
+        text-shadow: 0 0 30px rgba(255, 68, 68, 1);
+    }
 }
 
 .hero p {
@@ -656,6 +658,12 @@ nav ul li a:hover::after {
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
     transition: all var(--transition-speed) ease;
+}
+
+.dept-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
 }
 
 .department-card:nth-child(1) .card-icon { color: var(--police-accent); }
