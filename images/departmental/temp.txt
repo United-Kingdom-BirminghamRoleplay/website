@@ -2,4 +2,4 @@ rmp.png
 fire.png
 ambulance.png
 highways.png
-police.png.
+police.png
