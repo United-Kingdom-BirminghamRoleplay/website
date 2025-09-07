@@ -62,37 +62,37 @@
 
 /* Department-specific hero backgrounds */
 .police-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/headers/police.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/headers/police.png');
     background-size: cover;
     background-position: center;
 }
 
 .mod-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/headers/rmp.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/headers/rmp.png');
     background-size: cover;
     background-position: center;
 }
 
 .fire-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/headers/fire.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/headers/fire.png');
     background-size: cover;
     background-position: center;
 }
 
 .ambulance-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/headers/ambulance.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/headers/ambulance.png');
     background-size: cover;
     background-position: center;
 }
 
 .highways-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/headers/highways.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/headers/highways.png');
     background-size: cover;
     background-position: center;
 }
 
 .units-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/headers/units.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/headers/units.png');
     background-size: cover;
     background-position: center;
 }
@@ -512,7 +512,7 @@
 
 /* Divisions Page Styles */
 .divisions-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/headers/divisions.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/headers/divisions.png');
     background-size: cover;
     background-position: center;
 }

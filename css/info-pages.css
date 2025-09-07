@@ -18,25 +18,25 @@
 
 /* Page-specific hero backgrounds */
 .info-hero.key-information {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/headers/key-information.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/headers/key-information.png');
     background-size: cover;
     background-position: center;
 }
 
 .info-hero.legal-information {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/headers/legal-information.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/headers/legal-information.png');
     background-size: cover;
     background-position: center;
 }
 
 .info-hero.staff-directory {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/headers/staff-directory.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/headers/staff-directory.png');
     background-size: cover;
     background-position: center;
 }
 
 .info-hero.rules {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/headers/rules.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/headers/rules.png');
     background-size: cover;
     background-position: center;
 }
