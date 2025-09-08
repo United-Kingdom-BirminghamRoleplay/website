@@ -150,7 +150,27 @@
                                 <div class="dev-info">
                                     <h3>${member.name}</h3>
                                     <span class="dev-role">${member.role}</span>
-                                    <p class="dev-statement">${member.statement}</p>
+                                    <p class="dev-statement"><span class="statement-text">${member.statement.length > 170 ? member.statement.substring(0, 170) + '...' : member.statement}</span>
+                                    ${member.statement.length > 170 ? `<br><button class="read-more-btn dev-read-more" onclick="toggleStatement(this, '${member.statement.replace(/'/g, "\\'")}')">Read More</button>` : ''}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                // If Founder, render a special banner card
+                if (member.role === "Founder") {
+                    return `
+                        <div class="staff-card founder" data-role="${member.role}">
+                            <div class="founder-banner">
+                                <img class="founder-avatar" src="${member.avatar}" alt="${member.name}" onerror="this.src='images/default-avatar.png'">
+                                <div class="founder-info">
+                                    <h3>${member.name}</h3>
+                                    <div class="role-badge founder">${member.role}</div>
+                                    <div class="staff-statement">
+                                        <p><i class="fas fa-quote-left"></i> <span class="statement-text">${member.statement.length > 170 ? member.statement.substring(0, 170) + '...' : member.statement}</span></p>
+                                        ${member.statement.length > 170 ? `<button class="read-more-btn" onclick="toggleStatement(this, '${member.statement.replace(/'/g, "\\'")}')">Read More</button>` : ''}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -167,7 +187,8 @@
                         <div class="staff-info">
                             <h3>${member.name}</h3>
                             <div class="staff-statement">
-                                <p><i class="fas fa-quote-left"></i> ${member.statement}</p>
+                                <p><i class="fas fa-quote-left"></i> <span class="statement-text">${member.statement.length > 170 ? member.statement.substring(0, 170) + '...' : member.statement}</span></p>
+                                ${member.statement.length > 170 ? `<button class="read-more-btn" onclick="toggleStatement(this, '${member.statement.replace(/'/g, "\\'")}')">Read More</button>` : ''}
                             </div>
                         </div>
                     </div>
@@ -235,6 +256,19 @@
                     document.getElementById('staffSearch').value = '';
                 });
             });
+        }
+
+        function toggleStatement(button, fullStatement) {
+            const statementText = button.parentElement.querySelector('.statement-text');
+            const isExpanded = button.textContent === 'Read Less';
+            
+            if (isExpanded) {
+                statementText.textContent = fullStatement.substring(0, 170) + '...';
+                button.textContent = 'Read More';
+            } else {
+                statementText.textContent = fullStatement;
+                button.textContent = 'Read Less';
+            }
         }
     </script>
 </body>

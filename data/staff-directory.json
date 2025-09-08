@@ -11,16 +11,6 @@
       "skills": ["Leadership", "Management", "Strategy"]
     },
     {
-      "name": "Callum",
-      "role": "Founder",
-      "status": "Active",
-      "specialization": "Operation Management",
-      "statement": "Hard working and dedicated member of staff.",
-      "avatar": "images/staff/owner.png",
-      "employed": true,
-      "skills": ["Operations", "Leadership", "Planning"]
-    },
-    {
       "name": "Not_L4nd",
       "role": "Co-Founder",
       "status": "Active",
