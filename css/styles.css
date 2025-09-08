@@ -196,8 +196,8 @@ header {
     width: 100%;
     background-color: var(--header-bg);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
     z-index: 1000;
     transition: all var(--transition-speed) ease;
 }
