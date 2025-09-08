@@ -7,19 +7,19 @@ This folder contains background images for page headers across the website.
 Please add the following images to this folder:
 
 ### Info Pages
-- **key-information.png** - Background for Key Information page header
-- **legal-information.png** - Background for Legal Information page header  
-- **staff-directory.png** - Background for Staff Directory page header
-- **rules.png** - Background for Rules & Guidelines page header
+- **key-information.png** - Background for Key Information page header [!]
+- **legal-information.png** - Background for Legal Information page header  [!]
+- **staff-directory.png** - Background for Staff Directory page header  [!]
+- **rules.png** - Background for Rules & Guidelines page header [!]
 
 ### Department Pages
-- **divisions.png** - Background for Department Divisions page header
-- **police.png** - Background for Police department page header
-- **rmp.png** - Background for RMP department page header
-- **fire.png** - Background for Fire department page header
-- **ambulance.png** - Background for Ambulance department page header
-- **highways.png** - Background for Highways department page header
-- **units.png** - Background for Units page header
+- **divisions.png** - Background for Department Divisions page header [!]
+- **police.png** - Background for Police department page header [!]
+- **rmp.png** - Background for RMP department page header [!]
+- **fire.png** - Background for Fire department page header [!]
+- **ambulance.png** - Background for Ambulance department page header [!]
+- **highways.png** - Background for Highways department page header [!]
+- **units.png** - Background for Units page header [!]
 
 ## Image Requirements
 
