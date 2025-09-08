@@ -20,7 +20,7 @@ Please add the following images to this folder:
 - **ambulance.png** - Background for Ambulance department page header [!]
 - **highways.png** - Background for Highways department page header [!]
 - **units.png** - Background for Units page header [!]
-
+/
 ## Image Requirements
 
 - **Format:** PNG
