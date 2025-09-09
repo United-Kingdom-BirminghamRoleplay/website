@@ -2934,3 +2934,55 @@
         padding: 0.6rem 1.2rem;
     }
 }
+
+/* Pjer Special Support Styling */
+.staff-card.pjer-special {
+    box-shadow: 0 0 20px rgba(255, 192, 203, 0.3), 0 8px 32px rgba(0, 0, 0, 0.15);
+    border: 2px solid rgba(255, 192, 203, 0.2);
+    animation: gentle-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes gentle-glow {
+    0% { box-shadow: 0 0 20px rgba(255, 192, 203, 0.3), 0 8px 32px rgba(0, 0, 0, 0.15); }
+    100% { box-shadow: 0 0 30px rgba(255, 192, 203, 0.5), 0 8px 32px rgba(0, 0, 0, 0.15); }
+}
+
+.support-ribbon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(255, 20, 147, 0.3);
+    animation: ribbon-pulse 2s ease-in-out infinite;
+}
+
+@keyframes ribbon-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.support-ribbon i {
+    margin-right: 5px;
+}
+
+/* Memorial Text Styling */
+.memorial-text {
+    color: #ffd700;
+    font-style: italic;
+    font-weight: 500;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    background: rgba(255, 215, 0, 0.1);
+    border-radius: 8px;
+    border-left: 3px solid #ffd700;
+}
+
+.memorial-text i {
+    color: #ff6b6b;
+    margin-right: 5px;
+}

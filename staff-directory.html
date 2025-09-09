@@ -178,8 +178,13 @@
                 }
 
                 // Default staff card
+                const needsSupport = member.name === 'Pjer' && member.healthStatus !== 'recovered';
+                const specialClass = needsSupport ? ' pjer-special' : '';
+                const supportRibbon = needsSupport ? '<div class="support-ribbon"><i class="fas fa-ribbon"></i></div>' : '';
+                
                 return `
-                    <div class="staff-card ${roleClass}" data-role="${member.role}">
+                    <div class="staff-card ${roleClass}${specialClass}" data-role="${member.role}">
+                        ${supportRibbon}
                         <div class="staff-avatar">
                             <img src="${member.avatar}" alt="${member.name}" onerror="this.src='images/default-avatar.png'">
                             <div class="role-badge ${roleClass}">${member.role}</div>
@@ -200,9 +205,11 @@
                 const pastSection = document.createElement('div');
                 pastSection.className = 'past-staff-section';
                 pastSection.innerHTML = `
-                    <h2 class="past-staff-title">Past Leadership</h2>
+                    <h2 class="past-staff-title">Past Senior High Ranking</h2>
                     <div class="past-staff-grid">
-                        ${pastStaff.map(member => `
+                        ${pastStaff.map(member => {
+                            const memorialText = member.memorial ? `<p class="memorial-text"><i class="fas fa-heart"></i> ${member.memorial}</p>` : '';
+                            return `
                             <div class="past-staff-card" data-role="${member.role}">
                                 <div class="past-staff-avatar">
                                     <img src="${member.avatar}" alt="${member.name}" onerror="this.src='images/default-avatar.png'">
@@ -211,6 +218,7 @@
                                 <div class="past-staff-info">
                                     <h4>${member.name}</h4>
                                     <p class="past-specialization">${member.specialization}</p>
+                                    ${memorialText}
                                     <div class="past-skill-tags">
                                         ${(member.skills || []).map(skill => 
                                             `<span class="past-skill-tag">${skill}</span>`
@@ -218,7 +226,7 @@
                                     </div>
                                 </div>
                             </div>
-                        `).join('')}
+                        `}).join('')}
                     </div>
                 `;
                 container.appendChild(pastSection);
