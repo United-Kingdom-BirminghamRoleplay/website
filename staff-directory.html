@@ -45,26 +45,11 @@
     <section class="info-hero staff-directory">
         <div class="container">
             <h1>Meet the Founder</h1>
-            <p>Meet our dedicated team members</p>
         </div>
     </section>
 
     <section class="info-section">
         <div class="container">
-            <div class="search-container">
-                <div class="search-box">
-                    <input type="text" id="staffSearch" placeholder="Search staff members...">
-                    <i class="fas fa-search"></i>
-                </div>
-                <div class="filter-buttons">
-                    <button class="filter-btn active" data-role="all">All Senior High Ranking Staff</button>
-                    <button class="filter-btn" data-role="Founder">Founders</button>
-                    <button class="filter-btn" data-role="Co-Founder">Co-Founders</button>
-                    <button class="filter-btn" data-role="Execuative Assistant">Execuative Assistant</button>
-                    <button class="filter-btn" data-role="Directorate">Directorate</button>
-                </div>
-            </div>
-            
             <div class="staff-grid" id="staffGrid">
                 <div class="loading">Loading staff directory...</div>
             </div>
@@ -150,8 +135,7 @@
                                 <div class="dev-info">
                                     <h3>${member.name}</h3>
                                     <span class="dev-role">${member.role}</span>
-                                    <p class="dev-statement"><span class="statement-text">${member.statement.length > 170 ? member.statement.substring(0, 170) + '...' : member.statement}</span>
-                                    ${member.statement.length > 170 ? `<br><button class="read-more-btn dev-read-more" onclick="toggleStatement(this, '${member.statement.replace(/'/g, "\\'")}')">Read More</button>` : ''}</p>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -167,10 +151,6 @@
                                 <div class="founder-info">
                                     <h3>${member.name}</h3>
                                     <div class="role-badge founder">${member.role}</div>
-                                    <div class="staff-statement">
-                                        <p><i class="fas fa-quote-left"></i> <span class="statement-text">${member.statement.length > 170 ? member.statement.substring(0, 170) + '...' : member.statement}</span></p>
-                                        ${member.statement.length > 170 ? `<button class="read-more-btn" onclick="toggleStatement(this, '${member.statement.replace(/'/g, "\\'")}')">Read More</button>` : ''}
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -183,20 +163,15 @@
                 const supportRibbon = needsSupport ? '<div class="support-ribbon"><i class="fas fa-ribbon"></i></div>' : '';
                 
                 return `
-                    <div class="staff-card ${roleClass}${specialClass}" data-role="${member.role}">
-                        ${supportRibbon}
-                        <div class="staff-avatar">
-                            <img src="${member.avatar}" alt="${member.name}" onerror="this.src='images/default-avatar.png'">
-                            <div class="role-badge ${roleClass}">${member.role}</div>
-                        </div>
-                        <div class="staff-info">
-                            <h3>${member.name}</h3>
-                            <div class="staff-statement">
-                                <p><i class="fas fa-quote-left"></i> <span class="statement-text">${member.statement.length > 170 ? member.statement.substring(0, 170) + '...' : member.statement}</span></p>
-                                ${member.statement.length > 170 ? `<button class="read-more-btn" onclick="toggleStatement(this, '${member.statement.replace(/'/g, "\\'")}')">Read More</button>` : ''}
+                        <div class="staff-card founder" data-role="${member.role}">
+                            <div class="founder-banner">
+                                <img class="founder-avatar" src="${member.avatar}" alt="${member.name}" onerror="this.src='images/default-avatar.png'">
+                                <div class="founder-info">
+                                    <h3>${member.name}</h3>
+                                    <div class="role-badge founder">${member.role}</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
                 `;
             }).join('');
 
