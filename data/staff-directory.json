@@ -1,7 +1,7 @@
 {
   "staff": [
     {
-      "name": "Karam",
+      "name": "Active.karam",
       "role": "Founder",
       "status": "Active",
       "specialization": "Server oversight",
@@ -9,96 +9,6 @@
       "avatar": "images/staff/karam.png",
       "employed": true,
       "skills": ["Leadership", "Management", "Strategy"]
-    },
-    {
-      "name": "Not_L4nd",
-      "role": "Co-Founder",
-      "status": "Active",
-      "specialization": "OE Deputy Lead",
-      "statement": "Land is one of the Co Founders here at United Kingdom: Birmingham Roleplay. Land made an entrance around the beggining of 2025 and has been here since.",
-      "avatar": "images/staff/role-icon-1.png",
-      "employed": true,
-      "skills": ["Oversight", "Enforcement", "Leadership"]
-    },
-    {
-      "name": "Fynnandelias",
-      "role": "Co-Founder",
-      "status": "Active",
-      "specialization": "Sub-Department Director",
-      "statement": "Im proud to be a Co Founder here at United Kingdom Birmingham Roleplay! I joined last year on the 2nd of august and I remember the first session I joined and instantly wanted to become staff. Whilst being a staff member I have had some ups and downs including retiring and being fired! After some well earnt deeication I made it and here I am now!",
-      "avatar": "images/staff/fynn.png",
-      "employed": true,
-      "skills": ["Management", "Dedication", "Growth"]
-    },
-    {
-      "name": "James",
-      "role": "Execuative Assistant",
-      "status": "Active",
-      "specialization": "Leadership Deputy Director",
-      "statement": "James is one of the Assistant Founders here at United Kingdom: Birmingham Roleplay. James an entrance in XX of XX. James has enjoyed it.",
-      "avatar": "images/staff/james.png",
-      "employed": true,
-      "skills": ["Leadership", "Direction", "Support"]
-    },
-    {
-      "name": "Mcrunner",
-      "role": "Execuative Assistant",
-      "status": "Active",
-      "specialization": "Staff Oversight",
-      "statement": "Joshua (McRunner) has been in here for a very long time so we will not mention when he joined, though he loves United Kingdom: Birmingham Roleplay.",
-      "avatar": "images/staff/role-icon-8.png",
-      "employed": true,
-      "skills": ["Oversight", "Experience", "Dedication"]
-    },
-    {
-      "name": "Josh L",
-      "role": "Execuative Assistant",
-      "status": "Active",
-      "specialization": "Bot Development, Leadership Director",
-      "statement": "Josh has been in United Kingdom: Birmingham Rolplay for a few months. He is an assistant founder here aswell as a developer.",
-      "avatar": "images/staff/role-icon-8.png",
-      "employed": true,
-      "skills": ["Development", "Bots", "Leadership"]
-    },
-    {
-      "name": "Only Braclets",
-      "role": "Execuative Assistant",
-      "status": "Active",
-      "specialization": "Operations Management",
-      "statement": "Hard working and dedicated member of staff.",
-      "avatar": "images/staff/role-icon-8.png",
-      "employed": true,
-      "skills": ["Operations", "Management", "Efficiency"]
-    },
-    {
-      "name": "Max",
-      "role": "Directorate",
-      "status": "Active",
-      "specialization": "Oversight & Enforcement Director",
-      "statement": "Max has developed a strong foundation of experience since 2023, consistently applying his skills and expertise to contribute to organizational excellence. With a commitment to professionalism and a drive for continuous improvement, he leverages his knowledge to support the objectives of the OE and ensure the highest standards are maintained.",
-      "avatar": "images/staff/max.png",
-      "employed": true,
-      "skills": ["Oversight", "Standards", "Excellence"]
-    },
-    {
-      "name": "Cors",
-      "role": "Directorate",
-      "status": "Active",
-      "specialization": "Low Rank Director",
-      "statement": "Hard working and dedicated member of staff.",
-      "avatar": "images/staff/role-icon-7.png",
-      "employed": true,
-      "skills": ["Direction", "Training", "Support"]
-    },
-    {
-      "name": "Davontae",
-      "role": "Directorate",
-      "status": "Active",
-      "specialization": "Strategic Planning",
-      "statement": "Hard working and dedicated member of staff.",
-      "avatar": "images/staff/role-icon-7.png",
-      "employed": true,
-      "skills": ["Strategy", "Planning", "Analysis"]
     },
     {
       "name": "Finn",
