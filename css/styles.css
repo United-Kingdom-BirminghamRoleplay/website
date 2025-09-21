@@ -159,7 +159,7 @@ a:hover {
 }
 
 .hero .primary-btn {
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: var(--secondary-color);
     border: none;
     color: white;
     font-weight: 700;
@@ -169,7 +169,7 @@ a:hover {
 }
 
 .hero .primary-btn:hover {
-    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    background: var(--primary-color);
     transform: translateY(-5px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
 }
