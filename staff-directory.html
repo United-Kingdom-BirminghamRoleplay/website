@@ -127,7 +127,7 @@
                 const roleClass = member.role.toLowerCase().replace(/\s+/g, '-').replace('&', '');
                 
                 // If Website Developer, render a special banner card
-                if (member.role === "Community Manager") {
+                if (member.role === "Server Manager") {
                     return `
                         <div class="staff-card website-developer" data-role="${member.role}">
                             <div class="dev-banner">
@@ -143,7 +143,7 @@
                 }
 
                 // If Founder, render a special banner card
-                if (member.role === "Founder") {
+                if (member.role === "Founder" || member.role === "Co-Founder") {
                     return `
                         <div class="staff-card founder" data-role="${member.role}">
                             <div class="founder-banner">
@@ -151,6 +151,20 @@
                                 <div class="founder-info">
                                     <h3>${member.name}</h3>
                                     <div class="role-badge founder">${member.role}</div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+                                
+                if (member.role === "Ast-Founder") {
+                    return `
+                        <div class="staff-card founder" data-role="${member.role}">
+                            <div class="founder-banner">
+                                <img class="founder-avatar" src="${member.avatar}" alt="${member.name}" onerror="this.src='images/default-avatar.png'">
+                                <div class="founder-info">
+                                    <h3>${member.name}</h3>
+                                    <div class="role-badge ast-founder">${member.role}</div>
                                 </div>
                             </div>
                         </div>
@@ -168,90 +182,12 @@
                                 <img class="founder-avatar" src="${member.avatar}" alt="${member.name}" onerror="this.src='images/default-avatar.png'">
                                 <div class="founder-info">
                                     <h3>${member.name}</h3>
-                                    <div class="role-badge founder">${member.role}</div>
+                                    <div class="role-badge">${member.role}</div>
                                 </div>
                             </div>
                         </div>
                 `;
             }).join('');
-
-            // Add past staff section if there are any and we're showing all staff
-            if (pastStaff.length > 0 && (filteredStaff === allStaff || filteredStaff.some(member => member.employed === false))) {
-                const pastSection = document.createElement('div');
-                pastSection.className = 'past-staff-section';
-                pastSection.innerHTML = `
-                    <h2 class="past-staff-title">Past Senior High Ranking</h2>
-                    <div class="past-staff-grid">
-                        ${pastStaff.map(member => {
-                            const memorialText = member.memorial ? `<p class="memorial-text"><i class="fas fa-heart"></i> ${member.memorial}</p>` : '';
-                            return `
-                            <div class="past-staff-card" data-role="${member.role}">
-                                <div class="past-staff-avatar">
-                                    <img src="${member.avatar}" alt="${member.name}" onerror="this.src='images/default-avatar.png'">
-                                    <div class="past-role-badge">${member.role}</div>
-                                </div>
-                                <div class="past-staff-info">
-                                    <h4>${member.name}</h4>
-                                    <p class="past-specialization">${member.specialization}</p>
-                                    ${memorialText}
-                                    <div class="past-skill-tags">
-                                        ${(member.skills || []).map(skill => 
-                                            `<span class="past-skill-tag">${skill}</span>`
-                                        ).join('')}
-                                    </div>
-                                </div>
-                            </div>
-                        `}).join('')}
-                    </div>
-                `;
-                container.appendChild(pastSection);
-            }
-        }
-
-        function setupSearch() {
-            const searchInput = document.getElementById('staffSearch');
-            searchInput.addEventListener('input', function() {
-                const query = this.value.toLowerCase();
-                filteredStaff = allStaff.filter(member => 
-                    member.name.toLowerCase().includes(query) ||
-                    member.specialization.toLowerCase().includes(query) ||
-                    member.role.toLowerCase().includes(query) ||
-                    member.status.toLowerCase().includes(query)
-                );
-                displayStaff(filteredStaff);
-            });
-        }
-
-        function setupFilters() {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            filterButtons.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    filterButtons.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    const role = this.dataset.role;
-                    if (role === 'all') {
-                        filteredStaff = [...allStaff];
-                    } else {
-                        filteredStaff = allStaff.filter(member => member.role === role);
-                    }
-                    displayStaff(filteredStaff);
-                    document.getElementById('staffSearch').value = '';
-                });
-            });
-        }
-
-        function toggleStatement(button, fullStatement) {
-            const statementText = button.parentElement.querySelector('.statement-text');
-            const isExpanded = button.textContent === 'Read Less';
-            
-            if (isExpanded) {
-                statementText.textContent = fullStatement.substring(0, 170) + '...';
-                button.textContent = 'Read More';
-            } else {
-                statementText.textContent = fullStatement;
-                button.textContent = 'Read Less';
-            }
         }
     </script>
 </body>

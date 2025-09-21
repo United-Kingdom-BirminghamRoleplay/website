@@ -56,7 +56,7 @@
       "status": "Active",
       "specialization": "Server oversight",
       "statement": "Ethan is the Co-Founder of United Kingdom: Birmingham Roleplay. Ethan joined the server in October, 2023 and has been helping to run it since.",
-      "avatar": "images/staff/default-avatar.png",
+      "avatar": "images/staff/james.png",
       "employed": true,
       "skills": ["Leadership", "Management", "Strategy"]
     },
@@ -66,33 +66,13 @@
       "status": "Active",
       "specialization": "Server oversight",
       "statement": "Ethan is the Co-Founder of United Kingdom: Birmingham Roleplay. Ethan joined the server in October, 2023 and has been helping to run it since.",
-      "avatar": "images/staff/default-avatar.png",
-      "employed": true,
-      "skills": ["Leadership", "Management", "Strategy"]
-    },
-            {
-      "name": "Josh",
-      "role": "Ast-Founder",
-      "status": "Active",
-      "specialization": "Server oversight",
-      "statement": "Ethan is the Co-Founder of United Kingdom: Birmingham Roleplay. Ethan joined the server in October, 2023 and has been helping to run it since.",
-      "avatar": "images/staff/josh.png",
+      "avatar": "images/staff/cors.png",
       "employed": true,
       "skills": ["Leadership", "Management", "Strategy"]
     },
         {
-      "name": "Puddles",
-      "role": "Ast-Founder",
-      "status": "Active",
-      "specialization": "Server oversight",
-      "statement": "Ethan is the Co-Founder of United Kingdom: Birmingham Roleplay. Ethan joined the server in October, 2023 and has been helping to run it since.",
-      "avatar": "images/staff/puddles.png",
-      "employed": true,
-      "skills": ["Leadership", "Management", "Strategy"]
-    },
-    {
       "name": "Finn",
-      "role": "Community Manager",
+      "role": "Server Manager",
       "status": "Active",
       "specialization": "Website Management & Development",
       "statement": "Finn has been contributing to the server since 2025, quickly establishing himself as a talented developer. Leveraging his skills in web development and digital management, he now serves as a management member, helping to maintain high standards across the community's online platforms and supporting the objectives of the server with professionalism and innovation.",
@@ -101,14 +81,15 @@
       "skills": ["Web Dev", "CSS", "JavaScript", "Design"]
     },
         {
-      "name": "Bobmanjeff",
-      "role": "Community Manager",
+      "name": "Puddles",
+      "role": "Server Manager",
       "status": "Active",
-      "specialization": "Website Management & Development",
-      "statement": "Finn has been contributing to the server since 2025, quickly establishing himself as a talented developer. Leveraging his skills in web development and digital management, he now serves as a management member, helping to maintain high standards across the community's online platforms and supporting the objectives of the server with professionalism and innovation.",
-      "avatar": "images/staff/default-avatar.png",
+      "specialization": "Server oversight",
+      "statement": "Ethan is the Co-Founder of United Kingdom: Birmingham Roleplay. Ethan joined the server in October, 2023 and has been helping to run it since.",
+      "avatar": "images/staff/puddles.png",
       "employed": true,
-      "skills": ["Web Dev", "CSS", "JavaScript", "Design"]
+      "skills": ["Leadership", "Management", "Strategy"]
     }
+
   ]
 }
