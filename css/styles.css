@@ -583,33 +583,32 @@ nav ul li a:hover::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at bottom left, rgba(230, 57, 70, 0.15), transparent 70%);
+    background: radial-gradient(circle at bottom left, rgba(255, 0, 0, 0.15), transparent 70%);   
     z-index: 0;
 }
 
 .department-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
     position: relative;
     z-index: 1;
+    margin-bottom: 14px;
+    padding: 20px;
+    margin: 14px;
 }
 
 .department-card {
-    background-color: var(--card-bg);
-    border-radius: var(--card-border-radius);
-    padding: 2.5rem 2rem;
-    text-align: center;
-    box-shadow: var(--card-shadow);
-    transition: all var(--transition-speed) ease;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
-    overflow: hidden;
-    transform: translateY(50px);
-    opacity: 0;
-    animation: fadeInUp 1s forwards;
+  background-color: var(--card-bg);          /* your greyish background */
+  border-radius: var(--card-border-radius);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);   /* soft normal shadow */
+  border: 2px solid transparent;            /* invisible border for smooth glow transition */
+  transition: all 0.35s ease;                /* smooth hover */
+  position: relative;
+  overflow: hidden;
+  margin: 15px;
+  padding: 15px;
 }
 
 .department-card:nth-child(1) { animation-delay: 0.1s; }
@@ -622,60 +621,109 @@ nav ul li a:hover::after {
 .department-card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    transition: all var(--transition-speed) ease;
+    inset: 0;                           /* cover the card area so border sits at the edges */
+    border-radius: inherit;             /* match the card rounding */
+    border: 3px solid transparent;      /* base border (becomes colored via border-color below) */
+    pointer-events: none;               /* don't block clicks */
+    z-index: 2;                         /* above the card bg but won't block interaction */
+    transition: box-shadow 0.35s ease, border-color 0.35s ease, transform 0.35s ease, opacity 0.35s ease;
+    /* subtle resting glow — uses currentColor set by the nth-child rules below */
+    box-shadow: 0 0 12px rgba(0,0,0,0.03), 0 0 18px currentColor;
+    opacity: 1;
+    transform: translateZ(0);           /* help GPU-rendered glow */
+    mix-blend-mode: screen;             /* helps the glow look brighter on dark backgrounds */
 }
 
-.department-card:nth-child(1)::before { background-color: var(--police-accent); }
-.department-card:nth-child(2)::before { background-color: var(--mod-accent); }
-.department-card:nth-child(3)::before { background-color: var(--fire-accent); }
-.department-card:nth-child(4)::before { background-color: var(--ambulance-accent); }
-.department-card:nth-child(5)::before { background-color: var(--highways-accent); }
-.department-card:nth-child(6)::before { background-color: var(--primary-color); }
+.department-card:nth-child(1) { box-shadow: 0 0 20px var(--police-accent); }
+.department-card:nth-child(2) { box-shadow: 0 0 20px var(--mod-accent);}
+.department-card:nth-child(3) { box-shadow: 0 0 20px var(--fire-accent); }
+.department-card:nth-child(4) { box-shadow: 0 0 20px var(--ambulance-accent);}
+.department-card:nth-child(5) { box-shadow: 0 0 20px var(--highways-accent);}
+.department-card:nth-child(6) { box-shadow: 0 0 20px var(--primary-color); }
+
+.department-card:nth-child(1)::before {color: var(--police-accent); }
+.department-card:nth-child(2)::before {color: var(--mod-accent); }
+.department-card:nth-child(3)::before {color: var(--fire-accent); }
+.department-card:nth-child(4)::before {color: var(--ambulance-accent); }
+.department-card:nth-child(5)::before {color: var(--highways-accent); }
+.department-card:nth-child(6)::before {color: var(--primary-color); }
+
+.department-card:nth-child(1) { --glow-color: var(--police-accent); }
+.department-card:nth-child(2) { --glow-color: var(--mod-accent); }
+.department-card:nth-child(3) { --glow-color: var(--fire-accent); }
+.department-card:nth-child(4) { --glow-color: var(--ambulance-accent); }
+.department-card:nth-child(5) { --glow-color: var(--highways-accent); }
+.department-card:nth-child(6) { --glow-color: var(--primary-color); }
+
 
 .department-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+  border-color: var(--glow-color);  
+  box-shadow:
+      0 0 10px var(--glow-color),
+      0 0 20px var(--glow-color),
+      0 0 40px var(--glow-color),
+      0 0 60px var(--glow-color);            /* multi-layer glow */
+  transform: translateY(-8px);               /* subtle lift */
 }
 
 .department-card:hover::before {
-    width: 100%;
-    opacity: 0.1;
+    /* multiple shadow layers create a deep, vivid glow */
+    box-shadow:
+        0 10px 22px rgba(0,0,0,0.28),   /* deeper main shadow */
+        0 0 30px currentColor,
+        0 0 70px currentColor,
+        0 0 140px currentColor;
+    border-color: currentColor;         /* ensure the border also matches */
+    transform: scale(1.01);             /* tiny grow for a softer halo edge */
+    animation: pulseGlow 1.8s ease-in-out infinite;
+    opacity: 1;
+}
+
+@keyframes pulseGlow {
+    0% {
+    box-shadow:
+        0 10px 22px rgba(0,0,0,0.28),
+        0 0 25px currentColor,
+        0 0 60px currentColor,
+        0 0 120px currentColor;
+    }
+    50% {
+    box-shadow:
+        0 12px 26px rgba(0,0,0,0.34),
+        0 0 40px currentColor,
+            0 0 100px currentColor,
+        0 0 180px currentColor;
+    }
+    100% {
+    box-shadow:
+        0 10px 22px rgba(0,0,0,0.28),
+        0 0 25px currentColor,
+        0 0 60px currentColor,
+        0 0 120px currentColor;
+    }
 }
 
 .card-icon {
     font-size: 3rem;
     margin-bottom: 2rem;
-    height: 120px;
-    width: 120px;
+    height: 200px;
+    width: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 2rem;
     border-radius: 50%;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
     transition: all var(--transition-speed) ease;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .dept-logo {
-    width: 90px;
-    height: 90px;
+    width: 10000px;
+    height: 10000px;
     object-fit: contain;
     border-radius: 50%;
-    padding: 15px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15));
-    border: 3px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 
-        0 8px 25px rgba(0, 0, 0, 0.3),
-        0 0 20px rgba(255, 255, 255, 0.1),
-        inset 0 2px 0 rgba(255, 255, 255, 0.4);
     filter: brightness(1.1) contrast(1.05);
     transition: all 0.3s ease;
+    
 }
 
 .department-card:nth-child(1) .card-icon { color: var(--police-accent); }
@@ -685,37 +733,22 @@ nav ul li a:hover::after {
 .department-card:nth-child(5) .card-icon { color: var(--highways-accent); }
 .department-card:nth-child(6) .card-icon { color: var(--primary-color); }
 
-.department-card:hover .card-icon {
-    transform: scale(1.15) rotate(5deg);
-    box-shadow: 
-        0 15px 35px rgba(0, 0, 0, 0.4),
-        0 0 30px rgba(255, 255, 255, 0.3),
-        inset 0 2px 0 rgba(255, 255, 255, 0.5);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2));
-}
-
-.department-card:hover .dept-logo {
-    transform: scale(1.1);
-    box-shadow: 
-        0 12px 30px rgba(0, 0, 0, 0.4),
-        0 0 25px rgba(255, 255, 255, 0.2),
-        inset 0 3px 0 rgba(255, 255, 255, 0.6);
-    filter: brightness(1.2) contrast(1.1) saturate(1.1);
-}
-
-.department-card h3 {
-    color: var(--accent-color);
+.department-card h2 {
     margin-bottom: 1rem;
-    font-weight: 600;
+    font-weight: 750;
     letter-spacing: 0.5px;
 }
 
-.department-card:nth-child(1) h3 { color: var(--police-accent); }
-.department-card:nth-child(2) h3 { color: var(--mod-accent); }
-.department-card:nth-child(3) h3 { color: var(--fire-accent); }
-.department-card:nth-child(4) h3 { color: var(--ambulance-accent); }
-.department-card:nth-child(5) h3 { color: var(--highways-accent); }
-.department-card:nth-child(6) h3 { color: var(--primary-color); }
+.department-card h2::after {
+    background-color: currentColor;
+}
+
+.department-card:nth-child(1) h2 { color: var(--police-accent); }
+.department-card:nth-child(2) h2 { color: var(--mod-accent); }
+.department-card:nth-child(3) h2 { color: var(--fire-accent); }
+.department-card:nth-child(4) h2 { color: var(--ambulance-accent); }
+.department-card:nth-child(5) h2 { color: var(--highways-accent); }
+.department-card:nth-child(6) h2 { color: var(--primary-color); }
 
 /* Other departments card styles */
 .other-departments-card .btn {
