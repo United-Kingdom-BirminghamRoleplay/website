@@ -12,8 +12,7 @@
     "id": "welcome-website",
     "active": true,
     "type": "info",
-    "title": "Welcome to the UKBRUM website, we hope you find everything you're looking for here!",
-    "message": "If you have any questions, feel free to join our Discord server.",
+    "title": "Welcome to the UKBRUM website, we hope you find everything you're looking for here! If you have any questions, feel free to join our Discord server.",
     "link": {
       "text": "Join Discord",
       "url": "https://discord.gg/ukbrum"
